@@ -441,99 +441,32 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
 </footer>
 
 <script>
-// FiveM live stats — uses cfx.re API via a JSONP-style approach to avoid CORS
-// The servers-frontend endpoint doesn't send CORS headers for cross-origin requests,
-// so we use a no-cors fetch and fall back gracefully, or try the direct endpoint.
 const CFX_CODE = 'krdye6';
+const API_URL = `https://servers-frontend.fivem.net/api/servers/single/${CFX_CODE}`;
 
 async function fetchServerStats() {
   const onlineEl = document.getElementById('stat-online');
   const maxEl = document.getElementById('stat-max');
   const statusEl = document.getElementById('stat-status');
   const statusLabelEl = document.getElementById('stat-status-label');
-
-  // Try multiple endpoints — cfx.re API is the most reliable from a browser
-  const endpoints = [
-    `https://servers-frontend.fivem.net/api/servers/single/${CFX_CODE}`,
-    `https://cfx.re/api/servers/single/${CFX_CODE}`
-  ];
-
-  for (const url of endpoints) {
-    try {
-      const res = await fetch(url, {
-        method: 'GET',
-        headers: { 'Accept': 'application/json' },
-        signal: AbortSignal.timeout(8000)
-      });
-      if (!res.ok) continue;
-      const data = await res.json();
-      const srv = data && (data.Data || data.data);
-      if (!srv) continue;
-
-      const clients = srv.clients !== undefined ? srv.clients : (srv.players !== undefined ? srv.players : 0);
-      const maxClients = srv.svMaxclients || srv.sv_maxclients || srv.maxPlayers || 128;
-
-      onlineEl.textContent = clients;
-      maxEl.textContent = maxClients;
-      statusEl.textContent = '●';
-      statusEl.style.cssText = 'color:#4ade80 !important;font-size:1.8rem !important;line-height:1 !important;';
-      statusLabelEl.textContent = 'Server Online';
-      statusLabelEl.style.cssText = 'color:#4ade80 !important;';
-      return; // success
-    } catch (e) {
-      // try next endpoint
-    }
+  try {
+    const res = await fetch(API_URL, { signal: AbortSignal.timeout(8000) });
+    const data = await res.json();
+    const srv = data?.Data;
+    if (!srv) throw new Error('No data');
+    onlineEl.textContent = srv.clients ?? 0;
+    maxEl.textContent = srv.svMaxclients ?? 128;
+    statusEl.textContent = '●';
+    statusEl.style.cssText = 'color:#4ade80 !important; font-size:1.8rem !important; line-height:1 !important;';
+    statusLabelEl.textContent = 'Server Online';
+    statusLabelEl.style.cssText = 'color:#4ade80 !important;';
+  } catch (err) {
+    onlineEl.textContent = '0';
+    statusEl.textContent = '●';
+    statusEl.style.cssText = 'color:#f87171 !important; font-size:1.8rem !important; line-height:1 !important;';
+    statusLabelEl.textContent = 'Server Offline';
+    statusLabelEl.style.cssText = 'color:#f87171 !important;';
   }
-
-  // All endpoints failed — try a JSONP-style script tag as last resort
-  tryJsonpFallback(onlineEl, maxEl, statusEl, statusLabelEl);
-}
-
-function tryJsonpFallback(onlineEl, maxEl, statusEl, statusLabelEl) {
-  // Use the FiveM dynamic server info endpoint which returns plain JSON
-  const script = document.createElement('script');
-  const callbackName = '_wcStats' + Date.now();
-
-  window[callbackName] = function(data) {
-    delete window[callbackName];
-    document.head.removeChild(script);
-    if (data && data.Data) {
-      onlineEl.textContent = data.Data.clients || 0;
-      maxEl.textContent = data.Data.svMaxclients || 128;
-      statusEl.textContent = '●';
-      statusEl.style.cssText = 'color:#4ade80 !important;font-size:1.8rem !important;line-height:1 !important;';
-      statusLabelEl.textContent = 'Server Online';
-      statusLabelEl.style.cssText = 'color:#4ade80 !important;';
-    } else {
-      setOffline(onlineEl, statusEl, statusLabelEl);
-    }
-  };
-
-  script.onerror = function() {
-    delete window[callbackName];
-    try { document.head.removeChild(script); } catch(e) {}
-    setOffline(onlineEl, statusEl, statusLabelEl);
-  };
-
-  // Timeout safety
-  setTimeout(function() {
-    if (window[callbackName]) {
-      delete window[callbackName];
-      try { document.head.removeChild(script); } catch(e) {}
-      setOffline(onlineEl, statusEl, statusLabelEl);
-    }
-  }, 6000);
-
-  script.src = `https://servers-frontend.fivem.net/api/servers/single/${CFX_CODE}?callback=${callbackName}`;
-  document.head.appendChild(script);
-}
-
-function setOffline(onlineEl, statusEl, statusLabelEl) {
-  onlineEl.textContent = '0';
-  statusEl.textContent = '●';
-  statusEl.style.cssText = 'color:#f87171 !important;font-size:1.8rem !important;line-height:1 !important;';
-  statusLabelEl.textContent = 'Server Offline';
-  statusLabelEl.style.cssText = 'color:#f87171 !important;';
 }
 
 fetchServerStats();
