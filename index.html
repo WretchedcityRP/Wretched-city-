@@ -441,8 +441,9 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
 </footer>
 
 <script>
-const CFX_CODE = 'krdye6';
-const API_URL = `https://servers-frontend.fivem.net/api/servers/single/${CFX_CODE}`;
+// dynamic.json is served by FiveM directly from your server — no API key needed.
+// corsproxy.io adds CORS headers so GitHub Pages can fetch it over HTTPS.
+const DYNAMIC_URL = 'https://corsproxy.io/?url=http://206.168.173.33:30120/dynamic.json';
 
 async function fetchServerStats() {
   const onlineEl = document.getElementById('stat-online');
@@ -450,12 +451,11 @@ async function fetchServerStats() {
   const statusEl = document.getElementById('stat-status');
   const statusLabelEl = document.getElementById('stat-status-label');
   try {
-    const res = await fetch(API_URL, { signal: AbortSignal.timeout(8000) });
+    const res = await fetch(DYNAMIC_URL, { signal: AbortSignal.timeout(8000) });
+    if (!res.ok) throw new Error('bad response');
     const data = await res.json();
-    const srv = data?.Data;
-    if (!srv) throw new Error('No data');
-    onlineEl.textContent = srv.clients ?? 0;
-    maxEl.textContent = srv.svMaxclients ?? 128;
+    onlineEl.textContent = data.clients ?? 0;
+    maxEl.textContent = data.sv_maxclients ?? 128;
     statusEl.textContent = '●';
     statusEl.style.cssText = 'color:#4ade80 !important; font-size:1.8rem !important; line-height:1 !important;';
     statusLabelEl.textContent = 'Server Online';
