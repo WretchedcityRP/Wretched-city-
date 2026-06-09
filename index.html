@@ -140,7 +140,6 @@ backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
 .pkg-features { list-style:none !important; margin:18px 0 24px !important; text-align:left !important; }
 .pkg-features li { font-size:0.83rem !important; color:#c8d4e0 !important; padding:7px 0 !important; border-bottom:1px solid rgba(255,255,255,0.05) !important; display:flex !important; align-items:center !important; gap:8px !important; }
 .pkg-features li::before { content:'▸' !important; color:#5bb8f5 !important; flex-shrink:0 !important; }
-.pkg-note { font-size:0.75rem !important; color:#5a6a7a !important; line-height:1.6 !important; margin-bottom:18px !important; text-align:left !important; border-left:2px solid rgba(91,184,245,0.2) !important; padding-left:10px !important; }
 .btn-pkg { width:100% !important; display:block !important; background:transparent !important; border:1px solid #5bb8f5 !important; color:#5bb8f5 !important; padding:11px !important; font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.82rem !important; letter-spacing:2px !important; text-transform:uppercase !important; text-decoration:none !important; transition:all 0.2s; cursor:pointer !important; -webkit-appearance:none !important; appearance:none !important; }
 .btn-pkg:hover { background:#5bb8f5 !important; color:#080a0f !important; }
 .btn-pkg.disabled { border-color:#3a4a5a !important; color:#3a4a5a !important; cursor:default !important; }
@@ -206,7 +205,6 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
 .nav-btn { color:#5bb8f5 !important; border-color:#5bb8f5 !important; }
 .nav-logo { color:#eef4fa !important; }
 .nav-links a { color:#5a6a7a !important; }
-.pkg-note { color:#5a6a7a !important; }
 }
 </style>
 </head>
@@ -377,45 +375,41 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
     <p style="color:#5a6a7a !important;font-size:0.88rem;margin-top:-30px !important;margin-bottom:16px !important;">All purchases handled securely through our Tebex store.</p>
     <div class="packages-grid">
 
-      <!-- COMING SOON: Custom Chain Import -->
+      <!-- LIVE: IcePlanet Custom Chain Import -->
+      <div class="pkg-card">
+        <span class="pkg-name">Custom Chain Import</span>
+        <span class="pkg-price"><sup>$</sup>50<span class="pkg-mo"> one-time</span></span>
+        <ul class="pkg-features">
+          <li>IcePlanet chain import service</li>
+          <li>Your own custom chain file</li>
+          <li>Set up as wearable in-city item</li>
+          <li>Unique to your character</li>
+        </ul>
+        <a href="https://wretched-city.tebex.io" target="_blank" class="btn-pkg">Get Package</a>
+      </div>
+
+      <!-- COMING SOON #1 -->
       <div class="pkg-card coming-soon">
         <div class="pkg-badge soon">Coming Soon</div>
-        <span class="pkg-name">Custom Chain Import</span>
+        <span class="pkg-name">More Packages</span>
         <span class="pkg-price" style="color:#3a4a5a !important;">TBA</span>
         <ul class="pkg-features">
-          <li>Custom chain import service</li>
-          <li>Your own chain design in-city</li>
-          <li>Wearable character item</li>
-          <li>Release details coming soon</li>
+          <li>Stay tuned for more</li>
+          <li>New packages dropping soon</li>
+          <li>Follow our Discord for updates</li>
         </ul>
         <span class="btn-pkg disabled">Coming Soon</span>
       </div>
 
-      <!-- LIVE: VIP Valet Access -->
-      <div class="pkg-card">
-        <div class="pkg-badge">Available Now</div>
-        <span class="pkg-name">VIP Valet Access</span>
-        <span class="pkg-price"><sup>$</sup>14.99<span class="pkg-mo"> one-time</span></span>
-        <ul class="pkg-features">
-          <li>Access your garages from anywhere in the city</li>
-          <li>Spawn stored personal vehicles remotely</li>
-          <li>Skip the trip — retrieve your car on the spot</li>
-          <li>Cooldown system included for balance</li>
-        </ul>
-        <p class="pkg-note">Open garages &amp; spawn vehicles remotely. Quick, convenient access — no travel required.</p>
-        <a href="https://wretched-city.tebex.io" target="_blank" class="btn-pkg">Get Valet Access</a>
-      </div>
-
-      <!-- COMING SOON: VIP Clothing -->
+      <!-- COMING SOON #2 -->
       <div class="pkg-card coming-soon">
         <div class="pkg-badge soon">Coming Soon</div>
-        <span class="pkg-name">VIP Clothing</span>
+        <span class="pkg-name">More Packages</span>
         <span class="pkg-price" style="color:#3a4a5a !important;">TBA</span>
         <ul class="pkg-features">
-          <li>Exclusive VIP-only clothing</li>
-          <li>Premium outfits for your character</li>
-          <li>Stand out in the city</li>
-          <li>Release details coming soon</li>
+          <li>Stay tuned for more</li>
+          <li>New packages dropping soon</li>
+          <li>Follow our Discord for updates</li>
         </ul>
         <span class="btn-pkg disabled">Coming Soon</span>
       </div>
@@ -441,9 +435,8 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
 </footer>
 
 <script>
-// dynamic.json is served by FiveM directly from your server — no API key needed.
-// corsproxy.io adds CORS headers so GitHub Pages can fetch it over HTTPS.
-const DYNAMIC_URL = 'https://corsproxy.io/?url=http://206.168.173.33:30120/dynamic.json';
+const CFX_CODE = 'krdye6';
+const API_URL = `https://servers-frontend.fivem.net/api/servers/single/${CFX_CODE}`;
 
 async function fetchServerStats() {
   const onlineEl = document.getElementById('stat-online');
@@ -451,11 +444,12 @@ async function fetchServerStats() {
   const statusEl = document.getElementById('stat-status');
   const statusLabelEl = document.getElementById('stat-status-label');
   try {
-    const res = await fetch(DYNAMIC_URL, { signal: AbortSignal.timeout(8000) });
-    if (!res.ok) throw new Error('bad response');
+    const res = await fetch(API_URL, { signal: AbortSignal.timeout(8000) });
     const data = await res.json();
-    onlineEl.textContent = data.clients ?? 0;
-    maxEl.textContent = data.sv_maxclients ?? 128;
+    const srv = data?.Data;
+    if (!srv) throw new Error('No data');
+    onlineEl.textContent = srv.clients ?? 0;
+    maxEl.textContent = srv.svMaxclients ?? 128;
     statusEl.textContent = '●';
     statusEl.style.cssText = 'color:#4ade80 !important; font-size:1.8rem !important; line-height:1 !important;';
     statusLabelEl.textContent = 'Server Online';
