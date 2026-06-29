@@ -19,7 +19,7 @@
   -webkit-text-size-adjust: none !important;
 }
 :root { color-scheme: light !important; forced-color-adjust: none !important; }
-html { background: #080a0f !important; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+html { background: #080a0f !important; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; overflow-x: hidden !important; cursor: url('data:image/png;base64,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') 2 16, auto !important; }
 body {
   background: #080a0f !important;
   background-color: #080a0f !important;
@@ -55,6 +55,14 @@ backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
 .nav-links a:hover { color:#5bb8f5 !important; }
 .nav-btn { font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.75rem !important; letter-spacing:2px !important; text-transform:uppercase !important; color:#5bb8f5 !important; border:1px solid #5bb8f5 !important; padding:8px 20px !important; display:inline-block !important; transition:all 0.2s; background:transparent !important; }
 .nav-btn:hover { background:#5bb8f5 !important; color:#080a0f !important; }
+.nav-right { display:flex !important; align-items:center !important; gap:18px !important; }
+.nav-socials { display:flex !important; align-items:center !important; gap:9px !important; }
+.nav-social { display:flex !important; align-items:center !important; justify-content:center !important; width:30px !important; height:30px !important; color:#5a6a7a !important; transition:transform 0.2s ease, color 0.2s ease !important; }
+.nav-social svg { width:17px !important; height:17px !important; fill:#5a6a7a !important; transition:fill 0.2s ease !important; }
+.nav-social:hover { transform:translateY(-2px) !important; }
+.nav-social:hover svg { fill:#5bb8f5 !important; }
+.nav-discord-m { display:none !important; }
+.nav-discord-m svg { fill:#7984f5 !important; }
 
 /* HERO */
 .hero { position:relative !important; width:100% !important; height:100vh !important; min-height:640px !important; display:flex !important; align-items:center !important; justify-content:center !important; text-align:center !important; overflow:hidden !important; background:#080a0f !important; }
@@ -65,7 +73,7 @@ backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
 .hero-content { position:relative !important; z-index:3 !important; padding:0 24px !important; }
 .hero-eyebrow { font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.72rem !important; letter-spacing:7px !important; text-transform:uppercase !important; color:#5bb8f5 !important; display:block !important; margin-bottom:16px !important; opacity:0; animation:fadeUp 0.7s 0.2s ease forwards; }
 .hero-title { font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important; font-size:clamp(4.5rem,16vw,10rem) !important; line-height:0.88 !important; letter-spacing:5px !important; color:#eef4fa !important; display:block !important; opacity:0; animation:fadeUp 0.7s 0.35s ease forwards; }
-.hero-title .glow { display:block !important; color:#eef4fa !important; text-shadow: 0 0 30px rgba(91,184,245,0.9), 0 0 80px rgba(91,184,245,0.5), 0 0 150px rgba(91,184,245,0.25) !important; }
+.hero-title .glow { display:block !important; color:#eef4fa !important; text-shadow: 0 0 30px rgba(91,184,245,0.9), 0 0 80px rgba(91,184,245,0.5), 0 0 150px rgba(91,184,245,0.25) !important; animation: neonFlicker 7s 1.8s infinite !important; }
 .hero-sub { font-family:'Barlow',Arial,sans-serif !important; font-size:0.95rem !important; color:#4a5a6a !important; letter-spacing:2px !important; font-weight:300 !important; margin-top:18px !important; display:block !important; opacity:0; animation:fadeUp 0.7s 0.5s ease forwards; }
 .hero-btns { display:flex !important; gap:14px !important; justify-content:center !important; margin-top:38px !important; flex-wrap:wrap !important; opacity:0; animation:fadeUp 0.7s 0.65s ease forwards; }
 .btn-blue { font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.85rem !important; letter-spacing:3px !important; text-transform:uppercase !important; font-weight:700 !important; color:#080a0f !important; background:#5bb8f5 !important; padding:13px 36px !important; text-decoration:none !important; display:inline-block !important; clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%); transition:background 0.2s,transform 0.2s; }
@@ -172,6 +180,23 @@ footer { border-top:1px solid rgba(91,184,245,0.07) !important; padding:36px 48p
 .footer-logo { font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important; font-size:1.3rem !important; letter-spacing:3px !important; color:#eef4fa !important; }
 .footer-copy { font-size:0.75rem !important; color:#3a4a5a !important; }
 
+/* CURSOR + FX */
+a, button, .btn-blue, .btn-ghost, .nav-btn, .btn-pkg, .btn-discord, .nav-social, .social-link, .footer-socials a, input, label, .step-card, .faction-card, .pkg-card, .staff-card { cursor: crosshair !important; }
+.btn-blue { position:relative !important; overflow:hidden !important; }
+.btn-blue::after { content:'' !important; position:absolute !important; top:0 !important; left:-130% !important; width:55% !important; height:100% !important; background:linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent) !important; transform:skewX(-22deg) !important; transition:left 0.55s ease !important; pointer-events:none !important; }
+.btn-blue:hover::after { left:150% !important; }
+@keyframes neonFlicker { 0%,16%,20%,52%,56%,100% { text-shadow:0 0 30px rgba(91,184,245,0.9), 0 0 80px rgba(91,184,245,0.5), 0 0 150px rgba(91,184,245,0.25) !important; } 18%,54% { text-shadow:0 0 8px rgba(91,184,245,0.4) !important; } }
+.nav-links a { position:relative !important; }
+.nav-links a::after { content:'' !important; position:absolute !important; left:0 !important; bottom:-4px !important; width:0 !important; height:1px !important; background:#5bb8f5 !important; transition:width 0.25s ease !important; }
+.nav-links a:hover::after { width:100% !important; }
+html.js-on .reveal { opacity:0 !important; transform:translateY(26px) !important; transition:opacity 0.6s cubic-bezier(.2,.7,.2,1), transform 0.6s cubic-bezier(.2,.7,.2,1) !important; }
+html.js-on .reveal.reveal-in { opacity:1 !important; transform:translateY(0) !important; }
+@media (prefers-reduced-motion: reduce) {
+html.js-on .reveal { opacity:1 !important; transform:none !important; }
+.hero-title .glow { animation:none !important; }
+.btn-blue::after { display:none !important; }
+}
+
 /* ANIMATIONS */
 @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
 @keyframes fadeIn { from{opacity:0} to{opacity:1} }
@@ -179,8 +204,15 @@ footer { border-top:1px solid rgba(91,184,245,0.07) !important; padding:36px 48p
 
 /* MOBILE */
 @media (max-width:768px) {
-nav { padding:16px 20px !important; }
+nav { padding:13px 14px !important; }
 .nav-links { display:none !important; }
+.nav-logo { font-size:1.2rem !important; letter-spacing:1px !important; }
+.nav-right { gap:10px !important; }
+.nav-socials { gap:4px !important; }
+.nav-social { width:30px !important; height:30px !important; }
+.nav-social svg { width:18px !important; height:18px !important; }
+.nav-btn { display:none !important; }
+.nav-discord-m { display:flex !important; }
 .hero-title { font-size:clamp(3.8rem,17vw,5.5rem) !important; }
 .hero-btns { flex-direction:column !important; align-items:center !important; gap:12px !important; }
 .btn-blue,.btn-ghost { width:260px !important; text-align:center !important; clip-path:none !important; }
@@ -220,6 +252,8 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
 .nav-btn { color:#5bb8f5 !important; border-color:#5bb8f5 !important; }
 .nav-logo { color:#eef4fa !important; }
 .nav-links a { color:#5a6a7a !important; }
+.nav-social svg { fill:#5a6a7a !important; }
+.nav-discord-m svg { fill:#7984f5 !important; }
 .pkg-note { color:#5a6a7a !important; }
 .social-link { color:#5bb8f5 !important; border-color:rgba(91,184,245,0.22) !important; }
 .social-link svg { fill:#5bb8f5 !important; }
@@ -238,7 +272,16 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
     <li><a href="#staff">Staff</a></li>
     <li><a href="#store">Store</a></li>
   </ul>
-  <a href="https://discord.gg/dBFZrgDhSq" target="_blank" class="nav-btn">Discord</a>
+  <div class="nav-right">
+    <div class="nav-socials">
+      <a href="https://x.com/WretchedCityRP" target="_blank" class="nav-social" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg></a>
+      <a href="https://www.tiktok.com/@wretchedcityrp" target="_blank" class="nav-social" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.3 0 .59.04.86.13V9.4a6.33 6.33 0 0 0-1-.05A6.34 6.34 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43V8.69a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.12z"/></svg></a>
+      <a href="https://www.youtube.com/@WretchedCityRP" target="_blank" class="nav-social" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://www.instagram.com/wretchedcityrp2026/" target="_blank" class="nav-social" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.74 0 8.333.015 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.74 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+      <a href="https://discord.gg/dBFZrgDhSq" target="_blank" class="nav-social nav-discord-m" aria-label="Discord"><svg viewBox="0 0 24 18" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 1.492A19.79 19.79 0 0 0 15.432 0c-.21.375-.444.88-.608 1.28a18.27 18.27 0 0 0-5.487 0A12.6 12.6 0 0 0 8.72 0 19.74 19.74 0 0 0 3.83 1.492C.728 6.06-.114 10.51.307 14.9a19.9 19.9 0 0 0 6.073 3.06c.493-.668.93-1.378 1.307-2.124a12.9 12.9 0 0 1-2.057-.98c.173-.126.342-.258.505-.392a14.2 14.2 0 0 0 12.073 0c.165.137.334.269.505.392-.657.387-1.34.715-2.06.982.378.744.814 1.454 1.306 2.122a19.84 19.84 0 0 0 6.076-3.06c.493-5.09-.838-9.5-3.518-13.41ZM8.02 12.2c-1.183 0-2.157-1.085-2.157-2.42 0-1.334.955-2.42 2.157-2.42 1.21 0 2.176 1.095 2.157 2.42 0 1.335-.955 2.42-2.157 2.42Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.42 0-1.334.955-2.42 2.157-2.42 1.21 0 2.176 1.095 2.157 2.42 0 1.335-.946 2.42-2.157 2.42Z"/></svg></a>
+    </div>
+    <a href="https://discord.gg/dBFZrgDhSq" target="_blank" class="nav-btn">Discord</a>
+  </div>
 </nav>
 
 <div class="hero">
@@ -292,7 +335,7 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
   <div class="stat"><span class="stat-num" id="stat-online">--</span><span class="stat-label">Players Online</span></div>
   <div class="stat"><span class="stat-num" id="stat-max">128</span><span class="stat-label">Max Players</span></div>
   <div class="stat"><span class="stat-num" id="stat-status">●</span><span class="stat-label" id="stat-status-label">Checking...</span></div>
-  <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Custom Jobs</span></div>
+  <div class="stat"><span class="stat-num" id="stat-jobs">15+</span><span class="stat-label">Custom Jobs</span></div>
 </div>
 
 <div class="sw" id="join">
@@ -524,6 +567,48 @@ async function fetchServerStats() {
 
 fetchServerStats();
 setInterval(fetchServerStats, 30000);
+</script>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  root.className=(root.className+' js-on').trim();
+  var sel='.stag,.stitle,.srule,.step-card,.faction-card,.rule-item,.staff-card,.pkg-card,.discord-cta';
+  var els=[].slice.call(d.querySelectorAll(sel));
+  els.forEach(function(el){ el.classList.add('reveal'); });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var el=e.target;
+          var sibs=[].slice.call(el.parentNode.children).filter(function(c){return c.classList.contains('reveal');});
+          var i=sibs.indexOf(el);
+          el.style.transitionDelay=(i>0?(i*0.08):0)+'s';
+          el.classList.add('reveal-in');
+          io.unobserve(el);
+        }
+      });
+    },{threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('reveal-in'); }); }
+  function countUp(el){
+    if(!el) return;
+    var raw=(el.textContent||'').trim();
+    var suffix=/\+$/.test(raw)?'+':'';
+    var target=parseInt(raw,10); if(isNaN(target)) return;
+    var start=null, dur=1100;
+    function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/dur,1);
+      el.textContent=Math.floor(p*target)+suffix;
+      if(p<1) requestAnimationFrame(step); else el.textContent=target+suffix; }
+    requestAnimationFrame(step);
+  }
+  var bar=d.querySelector('.stats-bar'), done=false;
+  function fire(){ if(done)return; done=true; countUp(d.getElementById('stat-max')); countUp(d.getElementById('stat-jobs')); }
+  if('IntersectionObserver' in window && bar){
+    var io2=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ fire(); io2.disconnect(); } }); },{threshold:0.5});
+    io2.observe(bar);
+  } else { fire(); }
+})();
 </script>
 
 </body>
