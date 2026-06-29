@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en" style="background:#080a0f;">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#080a0f"/>
+<title>Wretched City RP — Links</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+/* RESET */
+*, *::before, *::after {
+  margin: 0 !important;
+  padding: 0;
+  box-sizing: border-box !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-text-size-adjust: none !important;
+}
+:root { color-scheme: light !important; forced-color-adjust: none !important; }
+html { background: #080a0f !important; -webkit-font-smoothing: antialiased; }
+body {
+  background: #080a0f !important;
+  background-color: #080a0f !important;
+  color: #c8d4e0 !important;
+  font-family: 'Barlow', Arial, sans-serif !important;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+}
+h1,h2,h3,h4,h5,h6 { color:#eef4fa !important; font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important; }
+a { color: inherit !important; text-decoration: none !important; }
+a:link,a:visited,a:hover,a:active { color: inherit !important; }
+p,li { color: inherit; }
+
+/* BACKGROUND */
+.page-bg {
+  position: fixed !important; inset: 0 !important; z-index: 0 !important;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(91,184,245,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 60% at 50% 110%, rgba(91,184,245,0.06) 0%, transparent 60%),
+    linear-gradient(170deg, #090b10 0%, #0d1322 45%, #050810 100%) !important;
+}
+.page-bg::after {
+  content:'' !important; position:absolute !important; inset:0 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity:0.5 !important; pointer-events:none !important;
+}
+.page-bg .scan {
+  position:absolute !important; inset:0 !important;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.025) 3px,rgba(0,0,0,0.025) 4px) !important;
+  pointer-events:none !important;
+}
+
+/* WRAP */
+.bio-wrap {
+  position: relative !important; z-index: 2 !important;
+  width: 100% !important; max-width: 440px !important;
+  padding: 64px 24px 48px !important;
+  text-align: center !important;
+}
+
+/* HEADER */
+.bio-avatar {
+  width: 104px !important; height: 104px !important; border-radius: 50% !important;
+  margin: 0 auto 22px !important;
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  background: radial-gradient(circle at 50% 40%, #102036 0%, #0a1320 100%) !important;
+  border: 2px solid rgba(91,184,245,0.4) !important;
+  box-shadow: 0 0 30px rgba(91,184,245,0.35), inset 0 0 18px rgba(91,184,245,0.12) !important;
+  font-family: 'Bebas Neue','Arial Narrow',Arial,sans-serif !important;
+  font-size: 2.7rem !important; letter-spacing: 2px !important; color: #eef4fa !important;
+  text-shadow: 0 0 16px rgba(91,184,245,0.8) !important;
+  opacity: 0; animation: fadeUp 0.6s 0.05s ease forwards;
+}
+.bio-name {
+  font-family: 'Bebas Neue','Arial Narrow',Arial,sans-serif !important;
+  font-size: 2.6rem !important; letter-spacing: 3px !important; line-height: 1 !important;
+  color: #eef4fa !important;
+  text-shadow: 0 0 24px rgba(91,184,245,0.45) !important;
+  opacity: 0; animation: fadeUp 0.6s 0.15s ease forwards;
+}
+.bio-eyebrow {
+  font-family: 'Barlow Condensed','Arial Narrow',Arial,sans-serif !important;
+  font-size: 0.66rem !important; letter-spacing: 5px !important; text-transform: uppercase !important;
+  color: #5bb8f5 !important; display: block !important; margin-bottom: 8px !important;
+  opacity: 0; animation: fadeUp 0.6s 0.1s ease forwards;
+}
+.bio-tag {
+  font-family: 'Barlow',Arial,sans-serif !important;
+  font-size: 0.9rem !important; color: #5a6a7a !important; letter-spacing: 1px !important;
+  font-weight: 300 !important; line-height: 1.6 !important;
+  margin: 12px auto 0 !important; max-width: 320px !important;
+  opacity: 0; animation: fadeUp 0.6s 0.2s ease forwards;
+}
+
+/* STATUS PILL */
+.bio-status {
+  display: inline-flex !important; align-items: center !important; gap: 8px !important;
+  margin: 22px auto 0 !important; padding: 6px 16px !important;
+  border: 1px solid rgba(91,184,245,0.18) !important; background: rgba(91,184,245,0.04) !important;
+  font-family: 'Barlow Condensed','Arial Narrow',Arial,sans-serif !important;
+  font-size: 0.7rem !important; letter-spacing: 2px !important; text-transform: uppercase !important;
+  color: #5a6a7a !important;
+  opacity: 0; animation: fadeUp 0.6s 0.25s ease forwards;
+}
+.bio-status .dot { width: 8px !important; height: 8px !important; border-radius: 50% !important; background: #3a4a5a !important; flex-shrink: 0 !important; }
+
+/* LINKS */
+.bio-links { margin-top: 30px !important; display: flex !important; flex-direction: column !important; gap: 13px !important; }
+.bio-link {
+  display: flex !important; align-items: center !important; gap: 14px !important;
+  width: 100% !important; padding: 17px 22px !important;
+  border: 1px solid rgba(91,184,245,0.25) !important;
+  background: rgba(91,184,245,0.05) !important;
+  color: #eef4fa !important;
+  font-family: 'Barlow Condensed','Arial Narrow',Arial,sans-serif !important;
+  font-size: 1rem !important; font-weight: 700 !important; letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  transition: background 0.2s, transform 0.2s, border-color 0.2s !important;
+  opacity: 0; animation: fadeUp 0.5s ease forwards;
+}
+.bio-link .ico { font-size: 1.25rem !important; flex-shrink: 0 !important; width: 26px !important; text-align: center !important; }
+.bio-link .ico svg { width: 22px !important; height: 22px !important; display: block !important; }
+.bio-link .lbl { flex: 1 !important; text-align: center !important; }
+.bio-link:hover { background: rgba(91,184,245,0.12) !important; border-color: rgba(91,184,245,0.55) !important; transform: translateY(-2px); }
+
+/* primary (solid blue) */
+.bio-link.primary {
+  background: #5bb8f5 !important; border-color: #5bb8f5 !important; color: #080a0f !important;
+}
+.bio-link.primary .lbl { color: #080a0f !important; }
+.bio-link.primary:hover { background: #eef4fa !important; border-color: #eef4fa !important; }
+
+/* discord (brand) */
+.bio-link.discord { background: rgba(88,101,242,0.12) !important; border-color: rgba(88,101,242,0.5) !important; }
+.bio-link.discord:hover { background: #5865F2 !important; border-color: #5865F2 !important; color: #ffffff !important; }
+.bio-link.discord:hover .lbl { color: #ffffff !important; }
+.bio-link.discord svg path { fill: #8b95f7 !important; transition: fill 0.2s !important; }
+.bio-link.discord:hover svg path { fill: #ffffff !important; }
+
+/* stagger */
+.bio-link:nth-child(1) { animation-delay: 0.30s; }
+.bio-link:nth-child(2) { animation-delay: 0.36s; }
+.bio-link:nth-child(3) { animation-delay: 0.42s; }
+.bio-link:nth-child(4) { animation-delay: 0.48s; }
+.bio-link:nth-child(5) { animation-delay: 0.54s; }
+
+/* SOCIAL ICON ROW */
+.bio-socials {
+  display: flex !important; justify-content: center !important; align-items: center !important;
+  gap: 14px !important; margin-top: 34px !important; flex-wrap: wrap !important;
+  opacity: 0; animation: fadeUp 0.6s 0.6s ease forwards;
+}
+.bio-social {
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  width: 48px !important; height: 48px !important;
+  border: 1px solid rgba(91,184,245,0.22) !important; background: rgba(91,184,245,0.04) !important;
+  color: #5bb8f5 !important; transition: all 0.2s !important;
+}
+.bio-social svg { width: 21px !important; height: 21px !important; fill: #5bb8f5 !important; transition: fill 0.2s !important; }
+.bio-social:hover { background: #5bb8f5 !important; border-color: #5bb8f5 !important; transform: translateY(-3px); }
+.bio-social:hover svg { fill: #080a0f !important; }
+
+/* FOOTER */
+.bio-foot { margin-top: 36px !important; opacity: 0; animation: fadeUp 0.6s 0.7s ease forwards; }
+.bio-foot a {
+  font-family: 'Barlow Condensed','Arial Narrow',Arial,sans-serif !important;
+  font-size: 0.72rem !important; letter-spacing: 2.5px !important; text-transform: uppercase !important;
+  color: #5a6a7a !important; transition: color 0.2s !important;
+}
+.bio-foot a:hover { color: #5bb8f5 !important; }
+.bio-copy { font-size: 0.66rem !important; color: #3a4a5a !important; margin-top: 18px !important; letter-spacing: 0.5px !important; }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+
+@media (max-width:768px) {
+.bio-wrap { padding: 48px 22px 40px !important; }
+.bio-name { font-size: 2.3rem !important; }
+}
+
+/* FORCE DARK MODE OVERRIDE */
+@media (prefers-color-scheme: dark) {
+html,body { background:#080a0f !important; color:#c8d4e0 !important; }
+.bio-name,.bio-avatar { color:#eef4fa !important; }
+.bio-eyebrow { color:#5bb8f5 !important; }
+.bio-tag,.bio-status,.bio-copy,.bio-foot a { color:#5a6a7a !important; }
+.bio-link { color:#eef4fa !important; border-color:rgba(91,184,245,0.25) !important; background:rgba(91,184,245,0.05) !important; }
+.bio-link .lbl { color:#eef4fa !important; }
+.bio-link.primary,.bio-link.primary .lbl { color:#080a0f !important; }
+.bio-link.primary { background:#5bb8f5 !important; border-color:#5bb8f5 !important; }
+.bio-social { color:#5bb8f5 !important; border-color:rgba(91,184,245,0.22) !important; }
+.bio-social svg { fill:#5bb8f5 !important; }
+.bio-copy { color:#3a4a5a !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="page-bg"><div class="scan"></div></div>
+
+<div class="bio-wrap">
+
+  <div class="bio-avatar">WC</div>
+  <span class="bio-eyebrow">FiveM Roleplay Server</span>
+  <h1 class="bio-name">Wretched City RP</h1>
+  <p class="bio-tag">Where every street has a story. Every choice has a consequence.</p>
+
+  <div class="bio-status">
+    <span class="dot" id="bio-dot"></span>
+    <span id="bio-status-text">Checking server…</span>
+  </div>
+
+  <div class="bio-links">
+
+    <a href="https://discord.gg/dBFZrgDhSq" target="_blank" class="bio-link discord">
+      <span class="ico"><svg viewBox="0 0 24 18" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 1.492A19.79 19.79 0 0 0 15.432 0c-.21.375-.444.88-.608 1.28a18.27 18.27 0 0 0-5.487 0A12.6 12.6 0 0 0 8.72 0 19.74 19.74 0 0 0 3.83 1.492C.728 6.06-.114 10.51.307 14.9a19.9 19.9 0 0 0 6.073 3.06c.493-.668.93-1.378 1.307-2.124a12.9 12.9 0 0 1-2.057-.98c.173-.126.342-.258.505-.392a14.2 14.2 0 0 0 12.073 0c.165.137.334.269.505.392-.657.387-1.34.715-2.06.982.378.744.814 1.454 1.306 2.122a19.84 19.84 0 0 0 6.076-3.06c.493-5.09-.838-9.5-3.518-13.41ZM8.02 12.2c-1.183 0-2.157-1.085-2.157-2.42 0-1.334.955-2.42 2.157-2.42 1.21 0 2.176 1.095 2.157 2.42 0 1.335-.955 2.42-2.157 2.42Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.42 0-1.334.955-2.42 2.157-2.42 1.21 0 2.176 1.095 2.157 2.42 0 1.335-.946 2.42-2.157 2.42Z"/></svg></span><span class="lbl">Discord Community</span>
+    </a>
+
+    <a href="https://wretched-city.tebex.io" target="_blank" class="bio-link">
+      <span class="ico">🛒</span><span class="lbl">Store</span>
+    </a>
+
+    <a href="index.html" class="bio-link">
+      <span class="ico">🌆</span><span class="lbl">Main Website</span>
+    </a>
+
+    <a href="rules.html" class="bio-link">
+      <span class="ico">📜</span><span class="lbl">Server Rules</span>
+    </a>
+
+  </div>
+
+  <div class="bio-socials">
+    <a href="https://x.com/WretchedCityRP" target="_blank" class="bio-social" aria-label="X (Twitter)">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@wretchedcityrp" target="_blank" class="bio-social" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.3 0 .59.04.86.13V9.4a6.33 6.33 0 0 0-1-.05A6.34 6.34 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43V8.69a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.12z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@WretchedCityRP" target="_blank" class="bio-social" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/wretchedcityrp2026/" target="_blank" class="bio-social" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.74 0 8.333.015 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.74 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+    </a>
+  </div>
+
+  <div class="bio-foot">
+    <a href="index.html">← Back to full site</a>
+    <div class="bio-copy">© 2026 Wretched City RP · Not affiliated with Rockstar Games</div>
+  </div>
+
+</div>
+
+<script>
+const DYNAMIC_URL = 'https://api.allorigins.win/raw?url=http://206.168.173.33:3017/dynamic.json';
+
+async function fetchStatus() {
+  const dot = document.getElementById('bio-dot');
+  const txt = document.getElementById('bio-status-text');
+  try {
+    const res = await fetch(DYNAMIC_URL, { signal: AbortSignal.timeout(8000) });
+    if (!res.ok) throw new Error('bad response');
+    const data = await res.json();
+    const online = data.clients ?? 0;
+    const max = data.sv_maxclients ?? 128;
+    dot.style.cssText = 'width:8px !important;height:8px !important;border-radius:50% !important;background:#4ade80 !important;box-shadow:0 0 8px #4ade80 !important;flex-shrink:0 !important;';
+    txt.textContent = online + ' / ' + max + ' Online';
+    txt.style.cssText = 'color:#4ade80 !important;';
+  } catch (err) {
+    dot.style.cssText = 'width:8px !important;height:8px !important;border-radius:50% !important;background:#f87171 !important;flex-shrink:0 !important;';
+    txt.textContent = 'Server Offline';
+    txt.style.cssText = 'color:#f87171 !important;';
+  }
+}
+
+fetchStatus();
+setInterval(fetchStatus, 30000);
+</script>
+
+</body>
+</html>
