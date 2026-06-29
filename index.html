@@ -72,6 +72,7 @@ backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
 .hero-scanlines { position:absolute !important; inset:0 !important; background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.025) 3px,rgba(0,0,0,0.025) 4px) !important; pointer-events:none !important; z-index:2 !important; }
 .hero-content { position:relative !important; z-index:3 !important; padding:0 24px !important; }
 .hero-eyebrow { font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.72rem !important; letter-spacing:7px !important; text-transform:uppercase !important; color:#5bb8f5 !important; display:block !important; margin-bottom:16px !important; opacity:0; animation:fadeUp 0.7s 0.2s ease forwards; }
+.hero-logo { width:158px !important; height:auto !important; display:block !important; margin:0 auto 14px !important; filter:drop-shadow(0 0 18px rgba(91,184,245,0.45)) !important; opacity:0; animation:fadeUp 0.8s 0.08s ease forwards; }
 .hero-title { font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important; font-size:clamp(4.5rem,16vw,10rem) !important; line-height:0.88 !important; letter-spacing:5px !important; color:#eef4fa !important; display:block !important; opacity:0; animation:fadeUp 0.7s 0.35s ease forwards; }
 .hero-title .glow { display:block !important; color:#eef4fa !important; text-shadow: 0 0 30px rgba(91,184,245,0.9), 0 0 80px rgba(91,184,245,0.5), 0 0 150px rgba(91,184,245,0.25) !important; animation: neonFlicker 7s 1.8s infinite !important; }
 .hero-sub { font-family:'Barlow',Arial,sans-serif !important; font-size:0.95rem !important; color:#4a5a6a !important; letter-spacing:2px !important; font-weight:300 !important; margin-top:18px !important; display:block !important; opacity:0; animation:fadeUp 0.7s 0.5s ease forwards; }
@@ -213,6 +214,7 @@ nav { padding:13px 14px !important; }
 .nav-btn { display:none !important; }
 .nav-discord-m { display:flex !important; }
 .hero-title { font-size:clamp(3.8rem,17vw,5.5rem) !important; }
+.hero-logo { width:120px !important; margin-bottom:10px !important; }
 .hero-btns { flex-direction:column !important; align-items:center !important; gap:12px !important; }
 .btn-blue,.btn-ghost { width:260px !important; text-align:center !important; clip-path:none !important; }
 .stats-bar { gap:28px !important; padding:28px 20px !important; }
@@ -313,6 +315,7 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
   </div>
   <div class="hero-scanlines"></div>
   <div class="hero-content">
+    <img class="hero-logo" src="wc-logo.gif" alt="Wretched City RP" width="400" height="400"/>
     <span class="hero-eyebrow">FiveM Roleplay Server</span>
     <h1 class="hero-title">
       Wretched
