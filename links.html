@@ -5,198 +5,93 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <meta name="theme-color" content="#080a0f"/>
-<title>Wretched City RP — Links</title>
+<title>Wretched City RP — Socials</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-/* RESET */
-*, *::before, *::after {
-  margin: 0 !important;
-  padding: 0;
-  box-sizing: border-box !important;
-  -webkit-tap-highlight-color: transparent !important;
-  -webkit-text-size-adjust: none !important;
-}
-:root { color-scheme: light !important; forced-color-adjust: none !important; }
-html { background: #080a0f !important; -webkit-font-smoothing: antialiased; }
-body {
-  background: #080a0f !important;
-  background-color: #080a0f !important;
-  color: #c8d4e0 !important;
-  font-family: 'Barlow', Arial, sans-serif !important;
-  overflow-x: hidden;
-  min-height: 100vh;
-  min-height: 100dvh;
-  display: flex !important;
-  align-items: flex-start !important;
-  justify-content: center !important;
-}
+*, *::before, *::after { margin:0 !important; padding:0; box-sizing:border-box !important; -webkit-tap-highlight-color:transparent !important; -webkit-text-size-adjust:none !important; }
+:root { color-scheme:light !important; forced-color-adjust:none !important; }
+html { background:#080a0f !important; -webkit-font-smoothing:antialiased; overflow-x:hidden !important; }
+body { background:#080a0f !important; background-color:#080a0f !important; color:#c8d4e0 !important; font-family:'Barlow',Arial,sans-serif !important; overflow-x:hidden; min-height:100vh; min-height:100dvh; display:flex !important; align-items:flex-start !important; justify-content:center !important; }
 h1,h2,h3,h4,h5,h6 { color:#eef4fa !important; font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important; }
-a { color: inherit !important; text-decoration: none !important; }
-a:link,a:visited,a:hover,a:active { color: inherit !important; }
-p,li { color: inherit; }
+a { color:inherit !important; text-decoration:none !important; }
+a:link,a:visited,a:hover,a:active { color:inherit !important; }
+p { color:inherit; }
 
 /* BACKGROUND */
-.page-bg {
-  position: fixed !important; inset: 0 !important; z-index: 0 !important;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(91,184,245,0.10) 0%, transparent 60%),
-    radial-gradient(ellipse 70% 60% at 50% 110%, rgba(91,184,245,0.06) 0%, transparent 60%),
-    linear-gradient(170deg, #090b10 0%, #0d1322 45%, #050810 100%) !important;
-}
-.page-bg::after {
-  content:'' !important; position:absolute !important; inset:0 !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  opacity:0.5 !important; pointer-events:none !important;
-}
-.page-bg .scan {
-  position:absolute !important; inset:0 !important;
-  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.025) 3px,rgba(0,0,0,0.025) 4px) !important;
-  pointer-events:none !important;
-}
+.page-bg { position:fixed !important; inset:0 !important; z-index:0 !important; background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(91,184,245,0.12) 0%, transparent 60%), radial-gradient(ellipse 70% 60% at 50% 110%, rgba(91,184,245,0.07) 0%, transparent 60%), linear-gradient(170deg, #090b10 0%, #0d1322 45%, #050810 100%) !important; }
+.page-bg::after { content:'' !important; position:absolute !important; inset:0 !important; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); opacity:0.5 !important; pointer-events:none !important; }
+.scan { position:absolute !important; inset:0 !important; background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.025) 3px,rgba(0,0,0,0.025) 4px) !important; pointer-events:none !important; }
+
+/* SCATTERED BG LOGOS */
+.bg-icons { position:fixed !important; inset:0 !important; z-index:1 !important; pointer-events:none !important; overflow:hidden !important; }
+.bgi { position:absolute !important; fill:#5bb8f5 !important; opacity:0.05 !important; animation:drift 14s ease-in-out infinite alternate !important; }
+@keyframes drift { from { transform:translateY(0) rotate(-6deg); } to { transform:translateY(-26px) rotate(6deg); } }
 
 /* WRAP */
-.bio-wrap {
-  position: relative !important; z-index: 2 !important;
-  width: 100% !important; max-width: 440px !important;
-  padding: 64px 24px 48px !important;
-  text-align: center !important;
-}
+.bio-wrap { position:relative !important; z-index:3 !important; width:100% !important; max-width:440px !important; padding:60px 24px 46px !important; text-align:center !important; }
+
+/* SPINNING EMBLEM */
+.emblem { position:relative !important; width:212px !important; height:212px !important; margin:2px auto 14px !important; display:flex !important; align-items:center !important; justify-content:center !important; opacity:0; animation:fadeUp 0.6s 0.05s ease forwards; }
+.emblem::before { content:'' !important; position:absolute !important; width:74% !important; height:74% !important; border-radius:50% !important; background:radial-gradient(circle, rgba(91,184,245,0.42) 0%, rgba(91,184,245,0.12) 46%, transparent 72%) !important; filter:blur(16px) !important; animation:glowPulse 3.6s ease-in-out infinite !important; }
+.emblem-img { position:relative !important; width:100% !important; height:auto !important; filter:drop-shadow(0 0 16px rgba(91,184,245,0.5)) !important; }
+@keyframes glowPulse { 0%,100% { opacity:0.55; transform:scale(0.94); } 50% { opacity:1; transform:scale(1.08); } }
 
 /* HEADER */
-.bio-avatar {
-  width: 104px !important; height: 104px !important; border-radius: 50% !important;
-  margin: 0 auto 22px !important;
-  display: flex !important; align-items: center !important; justify-content: center !important;
-  background: radial-gradient(circle at 50% 40%, #102036 0%, #0a1320 100%) !important;
-  border: 2px solid rgba(91,184,245,0.4) !important;
-  box-shadow: 0 0 30px rgba(91,184,245,0.35), inset 0 0 18px rgba(91,184,245,0.12) !important;
-  font-family: 'Bebas Neue','Arial Narrow',Arial,sans-serif !important;
-  font-size: 2.7rem !important; letter-spacing: 2px !important; color: #eef4fa !important;
-  text-shadow: 0 0 16px rgba(91,184,245,0.8) !important;
-  opacity: 0; animation: fadeUp 0.6s 0.05s ease forwards;
-}
-.bio-name {
-  font-family: 'Bebas Neue','Arial Narrow',Arial,sans-serif !important;
-  font-size: 2.6rem !important; letter-spacing: 3px !important; line-height: 1 !important;
-  color: #eef4fa !important;
-  text-shadow: 0 0 24px rgba(91,184,245,0.45) !important;
-  opacity: 0; animation: fadeUp 0.6s 0.15s ease forwards;
-}
-.bio-eyebrow {
-  font-family: 'Barlow Condensed','Arial Narrow',Arial,sans-serif !important;
-  font-size: 0.66rem !important; letter-spacing: 5px !important; text-transform: uppercase !important;
-  color: #5bb8f5 !important; display: block !important; margin-bottom: 8px !important;
-  opacity: 0; animation: fadeUp 0.6s 0.1s ease forwards;
-}
-.bio-tag {
-  font-family: 'Barlow',Arial,sans-serif !important;
-  font-size: 0.9rem !important; color: #5a6a7a !important; letter-spacing: 1px !important;
-  font-weight: 300 !important; line-height: 1.6 !important;
-  margin: 12px auto 0 !important; max-width: 320px !important;
-  opacity: 0; animation: fadeUp 0.6s 0.2s ease forwards;
-}
+.bio-eyebrow { font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.66rem !important; letter-spacing:5px !important; text-transform:uppercase !important; color:#5bb8f5 !important; display:block !important; margin-bottom:8px !important; opacity:0; animation:fadeUp 0.6s 0.12s ease forwards; }
+.bio-name { font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important; font-size:2.7rem !important; letter-spacing:3px !important; line-height:1 !important; color:#eef4fa !important; text-shadow:0 0 24px rgba(91,184,245,0.45) !important; opacity:0; animation:fadeUp 0.6s 0.18s ease forwards; }
+.bio-tag { font-family:'Barlow',Arial,sans-serif !important; font-size:0.9rem !important; color:#5a6a7a !important; letter-spacing:1px !important; font-weight:300 !important; line-height:1.6 !important; margin:12px auto 0 !important; max-width:320px !important; opacity:0; animation:fadeUp 0.6s 0.24s ease forwards; }
+.bio-status { display:inline-flex !important; align-items:center !important; gap:8px !important; margin:22px auto 0 !important; padding:6px 16px !important; border:1px solid rgba(91,184,245,0.18) !important; background:rgba(91,184,245,0.04) !important; font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.7rem !important; letter-spacing:2px !important; text-transform:uppercase !important; color:#5a6a7a !important; opacity:0; animation:fadeUp 0.6s 0.3s ease forwards; }
+.bio-status .dot { width:8px !important; height:8px !important; border-radius:50% !important; background:#3a4a5a !important; flex-shrink:0 !important; }
 
-/* STATUS PILL */
-.bio-status {
-  display: inline-flex !important; align-items: center !important; gap: 8px !important;
-  margin: 22px auto 0 !important; padding: 6px 16px !important;
-  border: 1px solid rgba(91,184,245,0.18) !important; background: rgba(91,184,245,0.04) !important;
-  font-family: 'Barlow Condensed','Arial Narrow',Arial,sans-serif !important;
-  font-size: 0.7rem !important; letter-spacing: 2px !important; text-transform: uppercase !important;
-  color: #5a6a7a !important;
-  opacity: 0; animation: fadeUp 0.6s 0.25s ease forwards;
-}
-.bio-status .dot { width: 8px !important; height: 8px !important; border-radius: 50% !important; background: #3a4a5a !important; flex-shrink: 0 !important; }
-
-/* LINKS */
-.bio-links { margin-top: 30px !important; display: flex !important; flex-direction: column !important; gap: 13px !important; }
-.bio-link {
-  display: flex !important; align-items: center !important; gap: 14px !important;
-  width: 100% !important; padding: 17px 22px !important;
-  border: 1px solid rgba(91,184,245,0.25) !important;
-  background: rgba(91,184,245,0.05) !important;
-  color: #eef4fa !important;
-  font-family: 'Barlow Condensed','Arial Narrow',Arial,sans-serif !important;
-  font-size: 1rem !important; font-weight: 700 !important; letter-spacing: 2px !important;
-  text-transform: uppercase !important;
-  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
-  transition: background 0.2s, transform 0.2s, border-color 0.2s !important;
-  opacity: 0; animation: fadeUp 0.5s ease forwards;
-}
-.bio-link .ico { font-size: 1.25rem !important; flex-shrink: 0 !important; width: 26px !important; text-align: center !important; }
-.bio-link .ico svg { width: 22px !important; height: 22px !important; display: block !important; }
-.bio-link .lbl { flex: 1 !important; text-align: center !important; }
-.bio-link:hover { background: rgba(91,184,245,0.12) !important; border-color: rgba(91,184,245,0.55) !important; transform: translateY(-2px); }
-
-/* primary (solid blue) */
-.bio-link.primary {
-  background: #5bb8f5 !important; border-color: #5bb8f5 !important; color: #080a0f !important;
-}
-.bio-link.primary .lbl { color: #080a0f !important; }
-.bio-link.primary:hover { background: #eef4fa !important; border-color: #eef4fa !important; }
-
-/* discord (brand) */
-.bio-link.discord { background: rgba(88,101,242,0.12) !important; border-color: rgba(88,101,242,0.5) !important; }
-.bio-link.discord:hover { background: #5865F2 !important; border-color: #5865F2 !important; color: #ffffff !important; }
-.bio-link.discord:hover .lbl { color: #ffffff !important; }
-.bio-link.discord svg path { fill: #8b95f7 !important; transition: fill 0.2s !important; }
-.bio-link.discord:hover svg path { fill: #ffffff !important; }
-
-/* stagger */
-.bio-link:nth-child(1) { animation-delay: 0.30s; }
-.bio-link:nth-child(2) { animation-delay: 0.36s; }
-.bio-link:nth-child(3) { animation-delay: 0.42s; }
-.bio-link:nth-child(4) { animation-delay: 0.48s; }
-.bio-link:nth-child(5) { animation-delay: 0.54s; }
-
-/* SOCIAL ICON ROW */
-.bio-socials {
-  display: flex !important; justify-content: center !important; align-items: center !important;
-  gap: 14px !important; margin-top: 34px !important; flex-wrap: wrap !important;
-  opacity: 0; animation: fadeUp 0.6s 0.6s ease forwards;
-}
-.bio-social {
-  display: flex !important; align-items: center !important; justify-content: center !important;
-  width: 48px !important; height: 48px !important;
-  border: 1px solid rgba(91,184,245,0.22) !important; background: rgba(91,184,245,0.04) !important;
-  color: #5bb8f5 !important; transition: all 0.2s !important;
-}
-.bio-social svg { width: 21px !important; height: 21px !important; fill: #5bb8f5 !important; transition: fill 0.2s !important; }
-.bio-social:hover { background: #5bb8f5 !important; border-color: #5bb8f5 !important; transform: translateY(-3px); }
-.bio-social:hover svg { fill: #080a0f !important; }
+/* SOCIAL BUTTONS */
+.s-links { margin-top:32px !important; display:flex !important; flex-direction:column !important; gap:13px !important; }
+.s-btn { display:flex !important; align-items:center !important; gap:14px !important; width:100% !important; padding:16px 22px !important; border:1px solid rgba(91,184,245,0.25) !important; background:rgba(91,184,245,0.05) !important; color:#eef4fa !important; font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:1rem !important; font-weight:700 !important; letter-spacing:2px !important; text-transform:uppercase !important; clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%); transition:background 0.25s, transform 0.2s, border-color 0.25s, color 0.2s !important; opacity:0; animation:fadeUp 0.5s ease forwards; }
+.s-btn .ic { width:26px !important; flex-shrink:0 !important; display:flex !important; align-items:center !important; justify-content:center !important; }
+.s-btn .ic svg { width:22px !important; height:22px !important; display:block !important; transition:fill 0.2s !important; }
+.s-btn .lbl { flex:1 !important; text-align:center !important; padding-right:26px !important; }
+.s-btn:hover { transform:translateY(-2px); color:#ffffff !important; }
+.s-btn:hover .lbl { color:#ffffff !important; }
+.s-btn:hover .ic svg { fill:#ffffff !important; }
+.s-btn:nth-child(1){ animation-delay:0.34s; } .s-btn:nth-child(2){ animation-delay:0.40s; } .s-btn:nth-child(3){ animation-delay:0.46s; } .s-btn:nth-child(4){ animation-delay:0.52s; } .s-btn:nth-child(5){ animation-delay:0.58s; }
+/* brand rest colors */
+.s-btn.dc .ic svg { fill:#7984f5 !important; } .s-btn.x .ic svg { fill:#eef4fa !important; } .s-btn.tt .ic svg { fill:#25f4ee !important; } .s-btn.yt .ic svg { fill:#ff4d4d !important; } .s-btn.ig .ic svg { fill:#e25082 !important; }
+/* brand hovers */
+.s-btn.dc:hover { background:#5865F2 !important; border-color:#5865F2 !important; }
+.s-btn.x:hover { background:rgba(255,255,255,0.14) !important; border-color:#ffffff !important; }
+.s-btn.tt:hover { background:rgba(254,44,85,0.18) !important; border-color:#fe2c55 !important; }
+.s-btn.yt:hover { background:rgba(255,0,0,0.18) !important; border-color:#ff0000 !important; }
+.s-btn.ig:hover { background:linear-gradient(48deg,#feda75 0%,#d62976 55%,#962fbf 100%) !important; border-color:#d62976 !important; }
 
 /* FOOTER */
-.bio-foot { margin-top: 36px !important; opacity: 0; animation: fadeUp 0.6s 0.7s ease forwards; }
-.bio-foot a {
-  font-family: 'Barlow Condensed','Arial Narrow',Arial,sans-serif !important;
-  font-size: 0.72rem !important; letter-spacing: 2.5px !important; text-transform: uppercase !important;
-  color: #5a6a7a !important; transition: color 0.2s !important;
-}
-.bio-foot a:hover { color: #5bb8f5 !important; }
-.bio-copy { font-size: 0.66rem !important; color: #3a4a5a !important; margin-top: 18px !important; letter-spacing: 0.5px !important; }
+.bio-foot { margin-top:34px !important; opacity:0; animation:fadeUp 0.6s 0.66s ease forwards; }
+.bio-foot a { font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.72rem !important; letter-spacing:2.5px !important; text-transform:uppercase !important; color:#5a6a7a !important; transition:color 0.2s !important; }
+.bio-foot a:hover { color:#5bb8f5 !important; }
+.bio-copy { font-size:0.66rem !important; color:#3a4a5a !important; margin-top:16px !important; letter-spacing:0.5px !important; }
 
-/* ANIMATIONS */
 @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
 
 @media (max-width:768px) {
-.bio-wrap { padding: 48px 22px 40px !important; }
-.bio-name { font-size: 2.3rem !important; }
+.bio-wrap { padding:46px 22px 38px !important; }
+.bio-name { font-size:2.4rem !important; }
+.emblem { width:176px !important; height:176px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+.emblem::before,.bgi { animation:none !important; }
 }
 
 /* FORCE DARK MODE OVERRIDE */
 @media (prefers-color-scheme: dark) {
 html,body { background:#080a0f !important; color:#c8d4e0 !important; }
-.bio-name,.bio-avatar { color:#eef4fa !important; }
+.bio-name { color:#eef4fa !important; }
 .bio-eyebrow { color:#5bb8f5 !important; }
 .bio-tag,.bio-status,.bio-copy,.bio-foot a { color:#5a6a7a !important; }
-.bio-link { color:#eef4fa !important; border-color:rgba(91,184,245,0.25) !important; background:rgba(91,184,245,0.05) !important; }
-.bio-link .lbl { color:#eef4fa !important; }
-.bio-link.primary,.bio-link.primary .lbl { color:#080a0f !important; }
-.bio-link.primary { background:#5bb8f5 !important; border-color:#5bb8f5 !important; }
-.bio-social { color:#5bb8f5 !important; border-color:rgba(91,184,245,0.22) !important; }
-.bio-social svg { fill:#5bb8f5 !important; }
+.s-btn { color:#eef4fa !important; border-color:rgba(91,184,245,0.25) !important; background:rgba(91,184,245,0.05) !important; }
+.s-btn .lbl { color:#eef4fa !important; }
+.s-btn.dc .ic svg { fill:#7984f5 !important; } .s-btn.x .ic svg { fill:#eef4fa !important; } .s-btn.tt .ic svg { fill:#25f4ee !important; } .s-btn.yt .ic svg { fill:#ff4d4d !important; } .s-btn.ig .ic svg { fill:#e25082 !important; }
+.bgi { fill:#5bb8f5 !important; }
 .bio-copy { color:#3a4a5a !important; }
 }
 </style>
@@ -205,51 +100,54 @@ html,body { background:#080a0f !important; color:#c8d4e0 !important; }
 
 <div class="page-bg"><div class="scan"></div></div>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="ic-x" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></symbol>
+<symbol id="ic-tt" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.3 0 .59.04.86.13V9.4a6.33 6.33 0 0 0-1-.05A6.34 6.34 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43V8.69a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.12z"/></symbol>
+<symbol id="ic-yt" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol>
+<symbol id="ic-ig" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.74 0 8.333.015 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.74 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></symbol>
+<symbol id="ic-dc" viewBox="0 0 24 24"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09-.01-.02-.04-.03-.07-.03-1.5.26-2.93.71-4.27 1.33-.01 0-.02.01-.03.02-2.72 4.07-3.47 8.03-3.1 11.95 0 .02.01.04.03.05 1.8 1.32 3.53 2.12 5.24 2.65.03.01.06 0 .07-.02.4-.55.76-1.13 1.07-1.74.02-.04 0-.08-.04-.09-.57-.22-1.11-.48-1.64-.78-.04-.02-.04-.08-.01-.11.11-.08.22-.17.33-.25.02-.02.05-.02.07-.01 3.44 1.57 7.15 1.57 10.55 0 .02-.01.05-.01.07.01.11.09.22.17.33.26.04.03.04.09-.01.11-.52.31-1.07.56-1.64.78-.04.01-.05.06-.04.09.32.61.68 1.19 1.07 1.74.03.02.06.03.09.02 1.72-.53 3.45-1.33 5.25-2.65.02-.01.03-.03.03-.05.44-4.53-.73-8.46-3.1-11.95-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.83 2.12-1.89 2.12z"/></symbol>
+</defs></svg>
+
+<div class="bg-icons" aria-hidden="true">
+  <svg class="bgi" style="top:6%;left:8%;width:48px;animation-delay:0s"><use href="#ic-x"/></svg>
+  <svg class="bgi" style="top:14%;left:78%;width:62px;animation-delay:2.4s"><use href="#ic-tt"/></svg>
+  <svg class="bgi" style="top:30%;left:24%;width:38px;animation-delay:1.2s"><use href="#ic-yt"/></svg>
+  <svg class="bgi" style="top:24%;left:60%;width:44px;animation-delay:3.6s"><use href="#ic-ig"/></svg>
+  <svg class="bgi" style="top:42%;left:88%;width:40px;animation-delay:0.8s"><use href="#ic-dc"/></svg>
+  <svg class="bgi" style="top:48%;left:4%;width:56px;animation-delay:4.2s"><use href="#ic-yt"/></svg>
+  <svg class="bgi" style="top:60%;left:70%;width:50px;animation-delay:1.8s"><use href="#ic-x"/></svg>
+  <svg class="bgi" style="top:66%;left:34%;width:42px;animation-delay:3s"><use href="#ic-ig"/></svg>
+  <svg class="bgi" style="top:78%;left:84%;width:46px;animation-delay:2s"><use href="#ic-tt"/></svg>
+  <svg class="bgi" style="top:82%;left:14%;width:54px;animation-delay:0.4s"><use href="#ic-dc"/></svg>
+  <svg class="bgi" style="top:90%;left:54%;width:38px;animation-delay:4.6s"><use href="#ic-x"/></svg>
+  <svg class="bgi" style="top:8%;left:44%;width:34px;animation-delay:5.2s"><use href="#ic-yt"/></svg>
+  <svg class="bgi" style="top:54%;left:46%;width:30px;animation-delay:2.8s"><use href="#ic-tt"/></svg>
+  <svg class="bgi" style="top:36%;left:6%;width:34px;animation-delay:1.5s"><use href="#ic-ig"/></svg>
+  <svg class="bgi" style="top:72%;left:58%;width:36px;animation-delay:3.9s"><use href="#ic-dc"/></svg>
+  <svg class="bgi" style="top:18%;left:34%;width:30px;animation-delay:4.9s"><use href="#ic-x"/></svg>
+</div>
+
 <div class="bio-wrap">
 
-  <div class="bio-avatar">WC</div>
+  <div class="emblem">
+    <img class="emblem-img" src="wc-logo.gif" alt="Wretched City RP" width="400" height="400"/>
+  </div>
+
   <span class="bio-eyebrow">FiveM Roleplay Server</span>
   <h1 class="bio-name">Wretched City RP</h1>
-  <p class="bio-tag">Where every street has a story. Every choice has a consequence.</p>
+  <p class="bio-tag">Follow the city across every platform.</p>
 
   <div class="bio-status">
     <span class="dot" id="bio-dot"></span>
     <span id="bio-status-text">Checking server…</span>
   </div>
 
-  <div class="bio-links">
-
-    <a href="https://discord.gg/dBFZrgDhSq" target="_blank" class="bio-link discord">
-      <span class="ico"><svg viewBox="0 0 24 18" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 1.492A19.79 19.79 0 0 0 15.432 0c-.21.375-.444.88-.608 1.28a18.27 18.27 0 0 0-5.487 0A12.6 12.6 0 0 0 8.72 0 19.74 19.74 0 0 0 3.83 1.492C.728 6.06-.114 10.51.307 14.9a19.9 19.9 0 0 0 6.073 3.06c.493-.668.93-1.378 1.307-2.124a12.9 12.9 0 0 1-2.057-.98c.173-.126.342-.258.505-.392a14.2 14.2 0 0 0 12.073 0c.165.137.334.269.505.392-.657.387-1.34.715-2.06.982.378.744.814 1.454 1.306 2.122a19.84 19.84 0 0 0 6.076-3.06c.493-5.09-.838-9.5-3.518-13.41ZM8.02 12.2c-1.183 0-2.157-1.085-2.157-2.42 0-1.334.955-2.42 2.157-2.42 1.21 0 2.176 1.095 2.157 2.42 0 1.335-.955 2.42-2.157 2.42Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.42 0-1.334.955-2.42 2.157-2.42 1.21 0 2.176 1.095 2.157 2.42 0 1.335-.946 2.42-2.157 2.42Z"/></svg></span><span class="lbl">Discord Community</span>
-    </a>
-
-    <a href="https://wretched-city.tebex.io" target="_blank" class="bio-link">
-      <span class="ico">🛒</span><span class="lbl">Store</span>
-    </a>
-
-    <a href="index.html" class="bio-link">
-      <span class="ico">🌆</span><span class="lbl">Main Website</span>
-    </a>
-
-    <a href="rules.html" class="bio-link">
-      <span class="ico">📜</span><span class="lbl">Server Rules</span>
-    </a>
-
-  </div>
-
-  <div class="bio-socials">
-    <a href="https://x.com/WretchedCityRP" target="_blank" class="bio-social" aria-label="X (Twitter)">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg>
-    </a>
-    <a href="https://www.tiktok.com/@wretchedcityrp" target="_blank" class="bio-social" aria-label="TikTok">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.3 0 .59.04.86.13V9.4a6.33 6.33 0 0 0-1-.05A6.34 6.34 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43V8.69a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.12z"/></svg>
-    </a>
-    <a href="https://www.youtube.com/@WretchedCityRP" target="_blank" class="bio-social" aria-label="YouTube">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-    </a>
-    <a href="https://www.instagram.com/wretchedcityrp2026/" target="_blank" class="bio-social" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.74 0 8.333.015 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.74 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-    </a>
+  <div class="s-links">
+    <a href="https://discord.gg/dBFZrgDhSq" target="_blank" class="s-btn dc"><span class="ic"><svg><use href="#ic-dc"/></svg></span><span class="lbl">Discord</span></a>
+    <a href="https://x.com/WretchedCityRP" target="_blank" class="s-btn x"><span class="ic"><svg><use href="#ic-x"/></svg></span><span class="lbl">X / Twitter</span></a>
+    <a href="https://www.tiktok.com/@wretchedcityrp" target="_blank" class="s-btn tt"><span class="ic"><svg><use href="#ic-tt"/></svg></span><span class="lbl">TikTok</span></a>
+    <a href="https://www.youtube.com/@WretchedCityRP" target="_blank" class="s-btn yt"><span class="ic"><svg><use href="#ic-yt"/></svg></span><span class="lbl">YouTube</span></a>
+    <a href="https://www.instagram.com/wretchedcityrp2026/" target="_blank" class="s-btn ig"><span class="ic"><svg><use href="#ic-ig"/></svg></span><span class="lbl">Instagram</span></a>
   </div>
 
   <div class="bio-foot">
@@ -261,13 +159,12 @@ html,body { background:#080a0f !important; color:#c8d4e0 !important; }
 
 <script>
 const DYNAMIC_URL = 'https://api.allorigins.win/raw?url=http://206.168.173.33:3017/dynamic.json';
-
 async function fetchStatus() {
   const dot = document.getElementById('bio-dot');
   const txt = document.getElementById('bio-status-text');
   try {
     const res = await fetch(DYNAMIC_URL, { signal: AbortSignal.timeout(8000) });
-    if (!res.ok) throw new Error('bad response');
+    if (!res.ok) throw new Error('bad');
     const data = await res.json();
     const online = data.clients ?? 0;
     const max = data.sv_maxclients ?? 128;
@@ -280,7 +177,6 @@ async function fetchStatus() {
     txt.style.cssText = 'color:#f87171 !important;';
   }
 }
-
 fetchStatus();
 setInterval(fetchStatus, 30000);
 </script>
