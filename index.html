@@ -126,7 +126,7 @@ backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
 
 /* STORE */
 .store-bg { background:#0c0f1a !important; background-color:#0c0f1a !important; border-top:1px solid rgba(91,184,245,0.07) !important; }
-.packages-grid { display:grid !important; grid-template-columns:repeat(3,1fr) !important; gap:18px !important; }
+.packages-grid { display:grid !important; grid-template-columns:repeat(2,1fr) !important; gap:18px !important; max-width:760px !important; margin:0 auto !important; }
 .pkg-card { background:#0d1018 !important; background-color:#0d1018 !important; border:1px solid rgba(91,184,245,0.15) !important; padding:34px 24px !important; text-align:center !important; position:relative !important; transition:all 0.3s; }
 .pkg-card:hover { border-color:rgba(91,184,245,0.4) !important; transform:translateY(-4px); box-shadow:0 16px 48px rgba(91,184,245,0.08) !important; }
 .pkg-card.coming-soon { opacity:0.45 !important; pointer-events:none !important; border-color:rgba(91,184,245,0.06) !important; }
@@ -146,15 +146,29 @@ backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
 .btn-pkg.disabled { border-color:#3a4a5a !important; color:#3a4a5a !important; cursor:default !important; }
 .btn-pkg.disabled:hover { background:transparent !important; color:#3a4a5a !important; }
 
+/* SOCIALS */
+.socials-row { display:flex !important; justify-content:center !important; align-items:center !important; gap:14px !important; flex-wrap:wrap !important; margin-top:30px !important; }
+.social-link { display:flex !important; align-items:center !important; justify-content:center !important; width:46px !important; height:46px !important; border:1px solid rgba(91,184,245,0.22) !important; background:rgba(91,184,245,0.04) !important; color:#5bb8f5 !important; transition:all 0.2s; }
+.social-link svg { width:20px !important; height:20px !important; fill:#5bb8f5 !important; transition:fill 0.2s; }
+.social-link:hover { background:#5bb8f5 !important; border-color:#5bb8f5 !important; transform:translateY(-3px); }
+.social-link:hover svg { fill:#080a0f !important; }
+.footer-socials { display:flex !important; align-items:center !important; gap:12px !important; }
+.footer-socials a { display:flex !important; align-items:center !important; justify-content:center !important; color:#5a6a7a !important; transition:color 0.2s; }
+.footer-socials a svg { width:18px !important; height:18px !important; fill:#5a6a7a !important; transition:fill 0.2s; }
+.footer-socials a:hover svg { fill:#5bb8f5 !important; }
+
 /* DISCORD CTA */
 .discord-cta { max-width:860px !important; margin:0 auto 90px !important; background:rgba(91,184,245,0.04) !important; border:1px solid rgba(91,184,245,0.14) !important; padding:72px 48px !important; text-align:center !important; }
 .discord-title { font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important; font-size:clamp(1.8rem,5vw,3.2rem) !important; letter-spacing:3px !important; color:#eef4fa !important; margin-bottom:14px !important; display:block !important; }
 .discord-sub { font-size:0.92rem !important; color:#5a6a7a !important; line-height:1.8 !important; margin-bottom:34px !important; }
 .btn-discord { display:inline-flex !important; align-items:center !important; gap:10px !important; background:#5865F2 !important; color:#ffffff !important; padding:13px 36px !important; font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.88rem !important; letter-spacing:2px !important; text-transform:uppercase !important; font-weight:700 !important; text-decoration:none !important; clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%); transition:background 0.2s,transform 0.2s; }
 .btn-discord:hover { background:#4752c4 !important; transform:translateY(-2px); }
+.discord-divider { display:flex !important; align-items:center !important; justify-content:center !important; gap:16px !important; margin:38px auto 0 !important; max-width:300px !important; }
+.discord-divider span { font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.65rem !important; letter-spacing:3px !important; text-transform:uppercase !important; color:#3a4a5a !important; white-space:nowrap !important; }
+.discord-divider .dl { flex:1 !important; height:1px !important; background:rgba(91,184,245,0.12) !important; }
 
 /* FOOTER */
-footer { border-top:1px solid rgba(91,184,245,0.07) !important; padding:36px 48px !important; display:flex !important; justify-content:space-between !important; align-items:center !important; max-width:1160px !important; margin:0 auto !important; background:transparent !important; }
+footer { border-top:1px solid rgba(91,184,245,0.07) !important; padding:36px 48px !important; display:flex !important; justify-content:space-between !important; align-items:center !important; max-width:1160px !important; margin:0 auto !important; background:transparent !important; gap:18px !important; flex-wrap:wrap !important; }
 .footer-logo { font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important; font-size:1.3rem !important; letter-spacing:3px !important; color:#eef4fa !important; }
 .footer-copy { font-size:0.75rem !important; color:#3a4a5a !important; }
 
@@ -179,7 +193,7 @@ nav { padding:16px 20px !important; }
 .staff-grid { grid-template-columns:repeat(2,1fr) !important; gap:12px !important; }
 .packages-grid { grid-template-columns:1fr !important; max-width:360px !important; margin-left:auto !important; margin-right:auto !important; gap:14px !important; }
 .discord-cta { padding:48px 20px !important; margin:0 20px 70px !important; }
-footer { flex-direction:column !important; gap:10px !important; text-align:center !important; padding:28px 20px !important; }
+footer { flex-direction:column !important; gap:14px !important; text-align:center !important; padding:28px 20px !important; }
 }
 
 /* FORCE DARK MODE OVERRIDE */
@@ -207,6 +221,9 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
 .nav-logo { color:#eef4fa !important; }
 .nav-links a { color:#5a6a7a !important; }
 .pkg-note { color:#5a6a7a !important; }
+.social-link { color:#5bb8f5 !important; border-color:rgba(91,184,245,0.22) !important; }
+.social-link svg { fill:#5bb8f5 !important; }
+.footer-socials a svg { fill:#5a6a7a !important; }
 }
 </style>
 </head>
@@ -377,18 +394,19 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
     <p style="color:#5a6a7a !important;font-size:0.88rem;margin-top:-30px !important;margin-bottom:16px !important;">All purchases handled securely through our Tebex store.</p>
     <div class="packages-grid">
 
-      <!-- COMING SOON: Custom Chain Import -->
-      <div class="pkg-card coming-soon">
-        <div class="pkg-badge soon">Coming Soon</div>
-        <span class="pkg-name">Custom Chain Import</span>
-        <span class="pkg-price" style="color:#3a4a5a !important;">TBA</span>
+      <!-- LIVE: Custom License Plate -->
+      <div class="pkg-card">
+        <div class="pkg-badge">Available Now</div>
+        <span class="pkg-name">Custom License Plate</span>
+        <span class="pkg-price"><sup>$</sup>10<span class="pkg-mo"> One-Time</span></span>
         <ul class="pkg-features">
-          <li>Custom chain import service</li>
-          <li>Your own chain design in-city</li>
-          <li>Wearable character item</li>
-          <li>Release details coming soon</li>
+          <li>Custom plate text on your personal vehicle</li>
+          <li>Choose your own unique plate</li>
+          <li>Perfect for crews, gangs &amp; businesses</li>
+          <li>A clean personal touch for your ride</li>
         </ul>
-        <span class="btn-pkg disabled">Coming Soon</span>
+        <p class="pkg-note">Personal vehicles only. Plates must follow city rules &amp; availability is not guaranteed.</p>
+        <a href="https://wretched-city.tebex.io/package/7494981" target="_blank" class="btn-pkg">Get Custom Plate</a>
       </div>
 
       <!-- LIVE: VIP Valet Access -->
@@ -403,7 +421,21 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
           <li>Cooldown system included for balance</li>
         </ul>
         <p class="pkg-note">Open garages &amp; spawn vehicles remotely. Quick, convenient access — no travel required.</p>
-        <a href="https://wretched-city.tebex.io" target="_blank" class="btn-pkg">Get Valet Access</a>
+        <a href="https://wretched-city.tebex.io/package/7487746" target="_blank" class="btn-pkg">Get Valet Access</a>
+      </div>
+
+      <!-- COMING SOON: Custom Chain Import -->
+      <div class="pkg-card coming-soon">
+        <div class="pkg-badge soon">Coming Soon</div>
+        <span class="pkg-name">Custom Chain Import</span>
+        <span class="pkg-price" style="color:#3a4a5a !important;">TBA</span>
+        <ul class="pkg-features">
+          <li>Custom chain import service</li>
+          <li>Your own chain design in-city</li>
+          <li>Wearable character item</li>
+          <li>Release details coming soon</li>
+        </ul>
+        <span class="btn-pkg disabled">Coming Soon</span>
       </div>
 
       <!-- COMING SOON: VIP Clothing -->
@@ -432,11 +464,32 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
       <svg width="20" height="15" viewBox="0 0 22 16" fill="none"><path d="M18.59 1.33A18.2 18.2 0 0 0 14.26 0c-.19.34-.4.8-.55 1.16a16.87 16.87 0 0 0-5.42 0A12.7 12.7 0 0 0 7.74 0 18.23 18.23 0 0 0 3.4 1.34C.49 5.7-.3 9.95.09 14.14a18.38 18.38 0 0 0 5.63 2.85c.45-.62.86-1.28 1.2-1.97a11.96 11.96 0 0 1-1.9-.91c.16-.11.31-.23.46-.35a13.1 13.1 0 0 0 11.03 0c.15.12.3.24.46.35-.6.36-1.24.66-1.9.92.35.69.75 1.35 1.2 1.97a18.32 18.32 0 0 0 5.64-2.86c.46-4.84-.79-9.04-3.32-12.81ZM7.34 11.59c-1.18 0-2.14-1.08-2.14-2.4s.94-2.4 2.14-2.4c1.2 0 2.16 1.08 2.14 2.4 0 1.32-.94 2.4-2.14 2.4Zm7.32 0c-1.18 0-2.14-1.08-2.14-2.4s.94-2.4 2.14-2.4c1.2 0 2.16 1.08 2.14 2.4 0 1.32-.93 2.4-2.14 2.4Z" fill="white"/></svg>
       Join Our Discord
     </a>
+    <div class="discord-divider"><span class="dl"></span><span>Follow Us</span><span class="dl"></span></div>
+    <div class="socials-row">
+      <a href="https://x.com/WretchedCityRP" target="_blank" class="social-link" aria-label="X (Twitter)">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@wretchedcityrp" target="_blank" class="social-link" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.3 0 .59.04.86.13V9.4a6.33 6.33 0 0 0-1-.05A6.34 6.34 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43V8.69a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.12z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@WretchedCityRP" target="_blank" class="social-link" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/wretchedcityrp2026/" target="_blank" class="social-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.74 0 8.333.015 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.74 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      </a>
+    </div>
   </div>
 </div>
 
 <footer>
   <div class="footer-logo">WretchedCity</div>
+  <div class="footer-socials">
+    <a href="https://x.com/WretchedCityRP" target="_blank" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg></a>
+    <a href="https://www.tiktok.com/@wretchedcityrp" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.3 0 .59.04.86.13V9.4a6.33 6.33 0 0 0-1-.05A6.34 6.34 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43V8.69a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.12z"/></svg></a>
+    <a href="https://www.youtube.com/@WretchedCityRP" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://www.instagram.com/wretchedcityrp2026/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.74 0 8.333.015 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.74 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+  </div>
   <div class="footer-copy">© 2026 Wretched City RP · FiveM Roleplay · Not affiliated with Rockstar Games</div>
 </footer>
 
