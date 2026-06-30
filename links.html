@@ -160,27 +160,47 @@ html,body { background:#080a0f !important; color:#c8d4e0 !important; }
 </div>
 
 <script>
-const DYNAMIC_URL = 'https://api.allorigins.win/raw?url=http://206.168.173.33:3017/dynamic.json';
-async function fetchStatus() {
-  const dot = document.getElementById('bio-dot');
-  const txt = document.getElementById('bio-status-text');
-  try {
-    const res = await fetch(DYNAMIC_URL, { signal: AbortSignal.timeout(8000) });
-    if (!res.ok) throw new Error('bad');
-    const data = await res.json();
-    const online = data.clients ?? 0;
-    const max = data.sv_maxclients ?? 128;
-    dot.style.cssText = 'width:8px !important;height:8px !important;border-radius:50% !important;background:#4ade80 !important;box-shadow:0 0 8px #4ade80 !important;flex-shrink:0 !important;';
-    txt.textContent = online + ' / ' + max + ' Online';
-    txt.style.cssText = 'color:#4ade80 !important;';
-  } catch (err) {
-    dot.style.cssText = 'width:8px !important;height:8px !important;border-radius:50% !important;background:#f87171 !important;flex-shrink:0 !important;';
-    txt.textContent = 'Server Offline';
-    txt.style.cssText = 'color:#f87171 !important;';
-  }
+const CFX_ID = 'krdye6';
+const RAW = 'http://206.168.173.33:3017/dynamic.json';
+const SOURCES = [
+  { url: 'https://servers-frontend.fivem.net/api/servers/single/' + CFX_ID,
+    parse: d => (d && d.Data) ? { online: (d.Data.clients != null ? d.Data.clients : (d.Data.players ? d.Data.players.length : 0)), max: d.Data.sv_maxclients } : null },
+  { url: 'https://api.allorigins.win/raw?url=' + encodeURIComponent(RAW),
+    parse: d => d ? { online: d.clients, max: d.sv_maxclients } : null },
+  { url: 'https://corsproxy.io/?url=' + encodeURIComponent(RAW),
+    parse: d => d ? { online: d.clients, max: d.sv_maxclients } : null },
+  { url: 'https://api.codetabs.com/v1/proxy/?quest=' + RAW,
+    parse: d => d ? { online: d.clients, max: d.sv_maxclients } : null }
+];
+const dot = document.getElementById('bio-dot');
+const txt = document.getElementById('bio-status-text');
+let fails = 0, hadData = false;
+function online(o, m) {
+  hadData = true;
+  dot.style.cssText = 'width:8px !important;height:8px !important;border-radius:50% !important;background:#4ade80 !important;box-shadow:0 0 8px #4ade80 !important;flex-shrink:0 !important;';
+  txt.textContent = (o != null ? o : 0) + ' / ' + (m != null ? m : 128) + ' Online';
+  txt.style.cssText = 'color:#4ade80 !important;';
 }
-fetchStatus();
-setInterval(fetchStatus, 30000);
+function unknown() {
+  dot.style.cssText = 'width:8px !important;height:8px !important;border-radius:50% !important;background:#5a6a7a !important;flex-shrink:0 !important;';
+  if (!hadData) { txt.textContent = 'Status Unavailable'; txt.style.cssText = 'color:#5a6a7a !important;'; }
+}
+async function trySrc(s) {
+  const res = await fetch(s.url, { signal: AbortSignal.timeout(7000) });
+  if (!res.ok) throw new Error('http');
+  const out = s.parse(await res.json());
+  if (!out || out.max == null) throw new Error('shape');
+  return out;
+}
+async function refresh() {
+  for (const s of SOURCES) {
+    try { const r = await trySrc(s); fails = 0; online(r.online, r.max); return; } catch (e) {}
+  }
+  fails++;
+  if (fails >= 3) unknown();
+}
+refresh();
+setInterval(refresh, 30000);
 </script>
 
 </body>
