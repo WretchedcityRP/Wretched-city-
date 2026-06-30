@@ -339,7 +339,7 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
   <div class="stat"><span class="stat-num" id="stat-online">--</span><span class="stat-label">Players Online</span></div>
   <div class="stat"><span class="stat-num" id="stat-max">128</span><span class="stat-label">Max Players</span></div>
   <div class="stat"><span class="stat-num" id="stat-status">●</span><span class="stat-label" id="stat-status-label">Checking...</span></div>
-  <div class="stat"><span class="stat-num" id="stat-jobs">15+</span><span class="stat-label">Custom Jobs</span></div>
+  <div class="stat"><span class="stat-num" id="stat-jobs">30+</span><span class="stat-label">Custom Jobs</span></div>
 </div>
 
 <div class="sw" id="join">
@@ -363,7 +363,7 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
       <span class="step-n">03</span>
       <span class="step-icon">🌆</span>
       <span class="step-title">Connect</span>
-      <p class="step-text">Search <code>Wretched City RP</code> in FiveM or connect directly via <code>206.168.173.33:3017</code> after approval.</p>
+      <p class="step-text">Search <code>Wretched City RP</code> in FiveM or connect via <code>cfx.re/join/krdye6</code> after approval.</p>
     </div>
   </div>
 </div>
@@ -541,36 +541,60 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
 </footer>
 
 <script>
-// dynamic.json is served by FiveM directly from your server — no API key needed.
-// corsproxy.io adds CORS headers so GitHub Pages can fetch it over HTTPS.
-const DYNAMIC_URL = 'https://api.allorigins.win/raw?url=http://206.168.173.33:3017/dynamic.json';
-
-async function fetchServerStats() {
-  const onlineEl = document.getElementById('stat-online');
-  const maxEl = document.getElementById('stat-max');
-  const statusEl = document.getElementById('stat-status');
-  const statusLabelEl = document.getElementById('stat-status-label');
-  try {
-    const res = await fetch(DYNAMIC_URL, { signal: AbortSignal.timeout(8000) });
-    if (!res.ok) throw new Error('bad response');
-    const data = await res.json();
-    onlineEl.textContent = data.clients ?? 0;
-    maxEl.textContent = data.sv_maxclients ?? 128;
-    statusEl.textContent = '●';
-    statusEl.style.cssText = 'color:#4ade80 !important; font-size:1.8rem !important; line-height:1 !important;';
-    statusLabelEl.textContent = 'Server Online';
-    statusLabelEl.style.cssText = 'color:#4ade80 !important;';
-  } catch (err) {
-    onlineEl.textContent = '0';
-    statusEl.textContent = '●';
-    statusEl.style.cssText = 'color:#f87171 !important; font-size:1.8rem !important; line-height:1 !important;';
-    statusLabelEl.textContent = 'Server Offline';
-    statusLabelEl.style.cssText = 'color:#f87171 !important;';
-  }
+// Live status. Tries FiveM's API, then several CORS proxies that read the
+// server's dynamic.json. If NONE respond (e.g. in a local/preview window that
+// blocks outside calls) it shows a neutral "Status Unavailable" instead of a
+// false "Offline". Real green "Online" only shows when a source actually answers.
+const CFX_ID = 'krdye6';
+const RAW = 'http://206.168.173.33:3017/dynamic.json';
+const SOURCES = [
+  { url: 'https://servers-frontend.fivem.net/api/servers/single/' + CFX_ID,
+    parse: d => (d && d.Data) ? { online: (d.Data.clients != null ? d.Data.clients : (d.Data.players ? d.Data.players.length : 0)), max: d.Data.sv_maxclients } : null },
+  { url: 'https://api.allorigins.win/raw?url=' + encodeURIComponent(RAW),
+    parse: d => d ? { online: d.clients, max: d.sv_maxclients } : null },
+  { url: 'https://corsproxy.io/?url=' + encodeURIComponent(RAW),
+    parse: d => d ? { online: d.clients, max: d.sv_maxclients } : null },
+  { url: 'https://api.codetabs.com/v1/proxy/?quest=' + RAW,
+    parse: d => d ? { online: d.clients, max: d.sv_maxclients } : null }
+];
+const onlineEl = document.getElementById('stat-online');
+const maxEl = document.getElementById('stat-max');
+const statusEl = document.getElementById('stat-status');
+const statusLabelEl = document.getElementById('stat-status-label');
+let statFails = 0, hadData = false;
+function showOnline(online, max) {
+  hadData = true;
+  onlineEl.textContent = online != null ? online : 0;
+  if (max != null) maxEl.textContent = max;
+  statusEl.textContent = '\u25CF';
+  statusEl.style.cssText = 'color:#4ade80 !important; font-size:1.8rem !important; line-height:1 !important;';
+  statusLabelEl.textContent = 'Server Online';
+  statusLabelEl.style.cssText = 'color:#4ade80 !important;';
 }
-
-fetchServerStats();
-setInterval(fetchServerStats, 30000);
+function showUnknown() {
+  if (!hadData) onlineEl.textContent = '\u2014';
+  statusEl.textContent = '\u25CF';
+  statusEl.style.cssText = 'color:#5a6a7a !important; font-size:1.8rem !important; line-height:1 !important;';
+  statusLabelEl.textContent = 'Status Unavailable';
+  statusLabelEl.style.cssText = 'color:#5a6a7a !important;';
+}
+async function trySource(src) {
+  const res = await fetch(src.url, { signal: AbortSignal.timeout(7000) });
+  if (!res.ok) throw new Error('http');
+  const out = src.parse(await res.json());
+  if (!out || out.max == null) throw new Error('shape');
+  return out;
+}
+async function refreshStats() {
+  for (const src of SOURCES) {
+    try { const r = await trySource(src); statFails = 0; showOnline(r.online, r.max); return; }
+    catch (e) { /* try next source */ }
+  }
+  statFails++;
+  if (statFails >= 3) showUnknown();
+}
+refreshStats();
+setInterval(refreshStats, 30000);
 </script>
 
 <script>
