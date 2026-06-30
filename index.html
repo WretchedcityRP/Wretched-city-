@@ -7,6 +7,18 @@
 <meta name="theme-color" content="#080a0f"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <link rel="apple-touch-icon" href="favicon.png"/>
+<!-- Open Graph / share preview. If you move to a custom domain (e.g. wretchedcity.com),
+     change the BASE in these URLs to https://wretchedcity.com -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Wretched City RP"/>
+<meta property="og:title" content="Wretched City RP — FiveM Roleplay Server"/>
+<meta property="og:description" content="Where every street has a story. Every choice has a consequence. Join the city."/>
+<meta property="og:image" content="https://wretchedcityrp.github.io/Wretched-city-/og-image.png"/>
+<meta property="og:url" content="https://wretchedcityrp.github.io/Wretched-city-/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Wretched City RP — FiveM Roleplay Server"/>
+<meta name="twitter:description" content="Where every street has a story. Every choice has a consequence. Join the city."/>
+<meta name="twitter:image" content="https://wretchedcityrp.github.io/Wretched-city-/og-image.png"/>
 <title>Wretched City RP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -109,6 +121,9 @@ backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
 .step-title { font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:1rem !important; font-weight:700 !important; letter-spacing:1px !important; text-transform:uppercase !important; color:#eef4fa !important; margin-bottom:8px !important; display:block !important; }
 .step-text { font-size:0.88rem !important; color:#5a6a7a !important; line-height:1.7 !important; }
 .step-text code { background:rgba(91,184,245,0.1) !important; color:#5bb8f5 !important; padding:2px 7px !important; font-size:0.82rem !important; border-radius:2px !important; }
+.copy-connect { margin-top:14px !important; display:inline-flex !important; align-items:center !important; gap:7px !important; font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.72rem !important; letter-spacing:1.5px !important; text-transform:uppercase !important; color:#5bb8f5 !important; background:transparent !important; border:1px solid rgba(91,184,245,0.4) !important; padding:8px 15px !important; cursor:pointer !important; -webkit-appearance:none !important; appearance:none !important; transition:all 0.2s !important; }
+.copy-connect:hover { background:#5bb8f5 !important; color:#080a0f !important; }
+.copy-connect svg { width:13px !important; height:13px !important; fill:currentColor !important; }
 
 /* Organizations */
 .Organizations-grid { display:grid !important; grid-template-columns:repeat(2,1fr) !important; gap:2px !important; }
@@ -364,6 +379,7 @@ h1,h2,h3,h4,h5,h6,.stitle,.discord-title,.footer-logo { color:#eef4fa !important
       <span class="step-icon">🌆</span>
       <span class="step-title">Connect</span>
       <p class="step-text">Search <code>Wretched City RP</code> in FiveM or connect via <code>cfx.re/join/krdye6</code> after approval.</p>
+      <button class="copy-connect" type="button" onclick="copyConnect(this)"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg><span>Copy Connect Link</span></button>
     </div>
   </div>
 </div>
@@ -586,12 +602,13 @@ async function trySource(src) {
   return out;
 }
 async function refreshStats() {
-  for (const src of SOURCES) {
-    try { const r = await trySource(src); statFails = 0; showOnline(r.online, r.max); return; }
-    catch (e) { /* try next source */ }
+  try {
+    const r = await Promise.any(SOURCES.map(trySource));   // all sources at once, first to answer wins
+    statFails = 0; showOnline(r.online, r.max);
+  } catch (e) {
+    statFails++;
+    if (statFails >= 3) showUnknown();
   }
-  statFails++;
-  if (statFails >= 3) showUnknown();
 }
 refreshStats();
 setInterval(refreshStats, 30000);
@@ -637,6 +654,17 @@ setInterval(refreshStats, 30000);
     io2.observe(bar);
   } else { fire(); }
 })();
+</script>
+
+<script>
+function copyConnect(btn){
+  var link='cfx.re/join/krdye6';
+  var label=btn.querySelector('span');
+  function done(){ var t=label.textContent; label.textContent='Copied!'; setTimeout(function(){ label.textContent='Copy Connect Link'; },1600); }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(link).then(done).catch(function(){ fallback(); }); }
+  else { fallback(); }
+  function fallback(){ var ta=document.createElement('textarea'); ta.value=link; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); done(); }
+}
 </script>
 
 </body>
