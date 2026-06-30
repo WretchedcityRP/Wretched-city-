@@ -7,6 +7,18 @@
 <meta name="theme-color" content="#080a0f"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <link rel="apple-touch-icon" href="favicon.png"/>
+<!-- Open Graph / share preview. If you move to a custom domain (e.g. wretchedcity.com),
+     change the BASE in these URLs to https://wretchedcity.com -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Wretched City RP"/>
+<meta property="og:title" content="Wretched City RP — Socials"/>
+<meta property="og:description" content="Follow the city across every platform."/>
+<meta property="og:image" content="https://wretchedcityrp.github.io/Wretched-city-/og-image.png"/>
+<meta property="og:url" content="https://wretchedcityrp.github.io/Wretched-city-/links.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Wretched City RP — Socials"/>
+<meta name="twitter:description" content="Follow the city across every platform."/>
+<meta name="twitter:image" content="https://wretchedcityrp.github.io/Wretched-city-/og-image.png"/>
 <title>Wretched City RP — Socials</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -193,11 +205,13 @@ async function trySrc(s) {
   return out;
 }
 async function refresh() {
-  for (const s of SOURCES) {
-    try { const r = await trySrc(s); fails = 0; online(r.online, r.max); return; } catch (e) {}
+  try {
+    const r = await Promise.any(SOURCES.map(trySrc));   // all sources at once, first to answer wins
+    fails = 0; online(r.online, r.max);
+  } catch (e) {
+    fails++;
+    if (fails >= 3) unknown();
   }
-  fails++;
-  if (fails >= 3) unknown();
 }
 refresh();
 setInterval(refresh, 30000);
