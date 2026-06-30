@@ -4,6 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <meta name="theme-color" content="#080a0f"/>
+<link rel="icon" type="image/png" href="favicon.png"/>
+<link rel="apple-touch-icon" href="favicon.png"/>
 <title>Rules — Wretched City RP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -31,6 +33,14 @@ nav { position:fixed !important; top:0; left:0; right:0; z-index:1000; display:f
 .nav-links a.active { color:#5bb8f5 !important; }
 .nav-btn { font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.75rem !important; letter-spacing:2px !important; text-transform:uppercase !important; color:#5bb8f5 !important; border:1px solid #5bb8f5 !important; padding:8px 20px !important; display:inline-block !important; transition:all 0.2s; background:transparent !important; }
 .nav-btn:hover { background:#5bb8f5 !important; color:#080a0f !important; }
+.nav-right { display:flex !important; align-items:center !important; gap:18px !important; }
+.nav-socials { display:flex !important; align-items:center !important; gap:9px !important; }
+.nav-social { display:flex !important; align-items:center !important; justify-content:center !important; width:30px !important; height:30px !important; color:#5a6a7a !important; transition:transform 0.2s ease, color 0.2s ease !important; }
+.nav-social svg { width:17px !important; height:17px !important; fill:#5a6a7a !important; transition:fill 0.2s ease !important; }
+.nav-social:hover { transform:translateY(-2px) !important; }
+.nav-social:hover svg { fill:#5bb8f5 !important; }
+.nav-discord-m { display:none !important; }
+.nav-discord-m svg { fill:#7984f5 !important; }
 
 /* PAGE HEADER */
 .page-header { padding:140px 48px 60px !important; max-width:1160px !important; margin:0 auto !important; }
@@ -106,6 +116,16 @@ nav { position:fixed !important; top:0; left:0; right:0; z-index:1000; display:f
 /* COMING SOON BADGE */
 .coming-badge { display:inline-block !important; background:rgba(91,184,245,0.08) !important; border:1px solid rgba(91,184,245,0.2) !important; color:#5bb8f5 !important; font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.72rem !important; letter-spacing:2px !important; text-transform:uppercase !important; padding:6px 18px !important; margin-top:8px !important; }
 
+/* HEIST TABLE */
+.heist-grid { display:grid !important; grid-template-columns:1.6fr 1fr 1fr !important; gap:0 !important; max-width:540px !important; margin:10px 0 16px !important; }
+.heist-grid > div { font-size:0.86rem !important; padding:8px 14px !important; border-bottom:1px solid rgba(91,184,245,0.06) !important; }
+.heist-grid .hh { font-size:0.7rem !important; letter-spacing:2px !important; text-transform:uppercase !important; color:#3a4a5a !important; font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; border-bottom:1px solid rgba(91,184,245,0.1) !important; }
+.heist-grid .hj { color:#eef4fa !important; font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-weight:700 !important; letter-spacing:0.5px !important; }
+.heist-grid .hn { color:#5bb8f5 !important; }
+
+/* INTRO LEAD */
+.intro-lead { font-size:0.95rem !important; color:#c8d4e0 !important; line-height:1.8 !important; margin-bottom:52px !important; padding-left:16px !important; border-left:2px solid #5bb8f5 !important; }
+
 /* DIVIDER */
 .section-divider { width:100% !important; height:1px !important; background:rgba(91,184,245,0.06) !important; margin:0 0 64px !important; border:none !important; display:block !important; }
 
@@ -121,8 +141,15 @@ footer { border-top:1px solid rgba(91,184,245,0.07) !important; padding:36px 48p
 
 /* MOBILE */
 @media (max-width:768px) {
-  nav { padding:16px 20px !important; }
+  nav { padding:13px 14px !important; }
   .nav-links { display:none !important; }
+  .nav-logo { font-size:1.2rem !important; letter-spacing:1px !important; }
+  .nav-right { gap:10px !important; }
+  .nav-socials { gap:4px !important; }
+  .nav-social { width:30px !important; height:30px !important; }
+  .nav-social svg { width:18px !important; height:18px !important; }
+  .nav-btn { display:none !important; }
+  .nav-discord-m { display:flex !important; }
   .page-header { padding:110px 20px 40px !important; }
   .rules-layout { flex-direction:column !important; padding:0 20px 64px !important; gap:0 !important; }
   .rules-sidebar { width:100% !important; position:relative !important; top:auto !important; max-height:none !important; margin-bottom:40px !important; }
@@ -131,6 +158,7 @@ footer { border-top:1px solid rgba(91,184,245,0.07) !important; padding:36px 48p
   .sidebar-links a { padding:7px 14px !important; font-size:0.72rem !important; border-left:none !important; border:1px solid rgba(91,184,245,0.1) !important; }
   .sidebar-links a.active { border-color:#5bb8f5 !important; }
   .lang-grid { grid-template-columns:130px 1fr !important; }
+  .heist-grid { grid-template-columns:1.3fr 0.85fr 0.85fr !important; }
   footer { flex-direction:column !important; gap:10px !important; text-align:center !important; padding:28px 20px !important; }
 }
 
@@ -138,11 +166,14 @@ footer { border-top:1px solid rgba(91,184,245,0.07) !important; padding:36px 48p
 @media (prefers-color-scheme: dark) {
   html,body { background:#080a0f !important; color:#c8d4e0 !important; }
   h1,h2,h3,h4,h5,h6 { color:#eef4fa !important; }
-  .section-title,.sub-title,.lang-term,.hg-loc { color:#eef4fa !important; }
+  .section-title,.sub-title,.lang-term,.hg-loc,.heist-grid .hj { color:#eef4fa !important; }
+  .intro-lead { color:#c8d4e0 !important; }
   .rule-body { color:#c8d4e0 !important; }
   .rule-list li { color:#c8d4e0 !important; }
   .nav-logo,.footer-logo { color:#eef4fa !important; }
   .nav-links a { color:#5a6a7a !important; }
+  .nav-social svg { fill:#5a6a7a !important; }
+  .nav-discord-m svg { fill:#7984f5 !important; }
   .nav-btn { color:#5bb8f5 !important; border-color:#5bb8f5 !important; }
   .sidebar-links a { color:#5a6a7a !important; }
   .sidebar-links a.active { color:#5bb8f5 !important; }
@@ -155,12 +186,21 @@ footer { border-top:1px solid rgba(91,184,245,0.07) !important; padding:36px 48p
   <a href="index.html" class="nav-logo">WretchedCity</a>
   <ul class="nav-links">
     <li><a href="index.html#join">Join</a></li>
-    <li><a href="index.html#factions">Factions</a></li>
+    <li><a href="index.html#Organizations">Organizations</a></li>
     <li><a href="rules.html" class="active">Rules</a></li>
-    <li><a href="index.html#staff">Staff</a></li>
     <li><a href="index.html#store">Store</a></li>
+    <li><a href="links.html">Socials</a></li>
   </ul>
-  <a href="https://discord.gg/dBFZrgDhSq" target="_blank" class="nav-btn">Discord</a>
+  <div class="nav-right">
+    <div class="nav-socials">
+      <a href="https://x.com/WretchedCityRP" target="_blank" class="nav-social" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg></a>
+      <a href="https://www.tiktok.com/@wretchedcityrp" target="_blank" class="nav-social" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.3 0 .59.04.86.13V9.4a6.33 6.33 0 0 0-1-.05A6.34 6.34 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43V8.69a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.12z"/></svg></a>
+      <a href="https://www.youtube.com/@WretchedCityRP" target="_blank" class="nav-social" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://www.instagram.com/wretchedcityrp2026/" target="_blank" class="nav-social" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.74 0 8.333.015 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.74 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+      <a href="https://discord.gg/dBFZrgDhSq" target="_blank" class="nav-social nav-discord-m" aria-label="Discord"><svg viewBox="0 0 24 18" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 1.492A19.79 19.79 0 0 0 15.432 0c-.21.375-.444.88-.608 1.28a18.27 18.27 0 0 0-5.487 0A12.6 12.6 0 0 0 8.72 0 19.74 19.74 0 0 0 3.83 1.492C.728 6.06-.114 10.51.307 14.9a19.9 19.9 0 0 0 6.073 3.06c.493-.668.93-1.378 1.307-2.124a12.9 12.9 0 0 1-2.057-.98c.173-.126.342-.258.505-.392a14.2 14.2 0 0 0 12.073 0c.165.137.334.269.505.392-.657.387-1.34.715-2.06.982.378.744.814 1.454 1.306 2.122a19.84 19.84 0 0 0 6.076-3.06c.493-5.09-.838-9.5-3.518-13.41ZM8.02 12.2c-1.183 0-2.157-1.085-2.157-2.42 0-1.334.955-2.42 2.157-2.42 1.21 0 2.176 1.095 2.157 2.42 0 1.335-.955 2.42-2.157 2.42Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.42 0-1.334.955-2.42 2.157-2.42 1.21 0 2.176 1.095 2.157 2.42 0 1.335-.946 2.42-2.157 2.42Z"/></svg></a>
+    </div>
+    <a href="https://discord.gg/dBFZrgDhSq" target="_blank" class="nav-btn">Discord</a>
+  </div>
 </nav>
 
 <div class="page-header">
@@ -180,126 +220,91 @@ footer { border-top:1px solid rgba(91,184,245,0.07) !important; padding:36px 48p
       <li><a href="#roleplay">Roleplay Rules</a></li>
       <li><a href="#language">In-Game Language</a></li>
       <li><a href="#lootboxing">Lootboxing &amp; NITRP</a></li>
-      <li><a href="#police">Police Interaction</a></li>
-      <li><a href="#robbery">Robbery Rules</a></li>
-      <li><a href="#kidnapping">Kidnapping &amp; Hostage</a></li>
-      <li><a href="#safezones">Safe Zones &amp; Hospital</a></li>
+      <li><a href="#police">Police Interactions</a></li>
+      <li><a href="#heist">Heist Activities</a></li>
+      <li><a href="#robberies">Robberies &amp; Hostages</a></li>
+      <li><a href="#safezones">Safe Zones &amp; Hospitals</a></li>
       <li><a href="#punishment">Punishment System</a></li>
-      <li><a href="#zerotolerance">Zero Tolerance</a></li>
-      <li><a href="#highcommand">High Command</a></li>
-      <li><a href="#appeals">Ban Appeals</a></li>
-      <li><a href="#criminal">Criminal Activity</a></li>
     </ul>
   </aside>
 
   <!-- CONTENT -->
   <main class="rules-content">
 
-    <!-- ═══ GENERAL ═══ -->
-    <section class="rule-section" id="general">
-      <div class="section-head">
-        <span class="section-num">Section 01</span>
-        <h2 class="section-title">General</h2>
-      </div>
-      <p class="rule-body">Wretched City RP is strictly an 18+ community. By participating, you confirm that you are at least 18 years of age. Failure to comply will result in removal.</p>
+    <p class="intro-lead">Welcome to Wretched City RP — a semi-serious roleplay community focused on immersive, story-driven experiences with room for creativity and fun. Actions have consequences. Play your role, respect others, and help create quality roleplay for everyone.</p>
 
-      <span class="sub-title">Use of Common Sense</span>
-      <p class="rule-body">Not every situation will be covered in the rules. Players are expected to use common sense and act in good faith to maintain a fair and enjoyable environment.</p>
+    <!-- GENERAL -->
+    <section class="rule-section" id="general">
+      <div class="section-head"><span class="section-num">Section 01</span><h2 class="section-title">General</h2></div>
+      <p class="rule-body">Wretched City RP is strictly 18+. Any player found to be under 18 will be removed.</p>
+
+      <span class="sub-title">Use Common Sense</span>
+      <p class="rule-body">Not every situation can be covered by written rules. Use common sense and act in good faith.</p>
 
       <span class="sub-title">Respect &amp; Conduct</span>
-      <p class="rule-body">Respect all players and staff at all times. Toxic behavior, harassment, discrimination, or intentional disruption will not be tolerated.</p>
+      <ul class="rule-list">
+        <li>Respect all players and staff.</li>
+        <li>Harassment, discrimination, excessive toxicity, or intentional disruption will not be tolerated.</li>
+        <li>Keep disagreements civil.</li>
+      </ul>
 
-      <span class="sub-title">Semi-Serious Roleplay Standard</span>
-      <p class="rule-body">This is a semi-serious server. While fun and creativity are encouraged, actions should still make sense within the roleplay environment. Avoid unrealistic or troll behavior that breaks immersion.</p>
+      <span class="sub-title">Semi-Serious Roleplay</span>
+      <ul class="rule-list">
+        <li>This is a semi-serious server. While fun and creativity are encouraged, actions should still make sense within the roleplay environment.</li>
+        <li>Avoid unrealistic or troll behavior that breaks immersion.</li>
+      </ul>
 
       <span class="sub-title">In-Character (IC) vs Out-of-Character (OOC)</span>
-      <p class="rule-body">Keep IC and OOC separate at all times.</p>
       <ul class="rule-list">
-        <li>IC issues should be handled in character</li>
-        <li>OOC issues should be handled respectfully outside of RP (or through staff if needed)</li>
+        <li>Keep IC and OOC separate at all times.</li>
+        <li>Handle IC issues through roleplay.</li>
+        <li>Handle OOC concerns through staff channels when necessary.</li>
       </ul>
 
-      <span class="sub-title">Staff Respect</span>
-      <p class="rule-body">Staff decisions are final. If you have concerns, navigate to our discord waiting room or create a general ticket. Give respect and you will receive respect back.</p>
+      <span class="sub-title">Staff Decisions</span>
+      <p class="rule-body">Staff decisions are final. Concerns may be discussed respectfully through proper tickets or appeals.</p>
 
       <span class="sub-title">Rule Awareness</span>
-      <p class="rule-body">It is your responsibility to stay up to date with server rules. Claiming ignorance will not excuse rule breaks.</p>
+      <ul class="rule-list">
+        <li>It is your responsibility to know and follow the server rules.</li>
+        <li>Ignorance is not an excuse.</li>
+      </ul>
     </section>
 
     <hr class="section-divider"/>
 
-    <!-- ═══ ROLEPLAY RULES ═══ -->
+    <!-- ROLEPLAY RULES -->
     <section class="rule-section" id="roleplay">
-      <div class="section-head">
-        <span class="section-num">Section 02</span>
-        <h2 class="section-title">Roleplay Rules</h2>
-      </div>
+      <div class="section-head"><span class="section-num">Section 02</span><h2 class="section-title">Roleplay Rules</h2></div>
 
-      <span class="sub-title">Random Deathmatch (RDM)</span>
-      <p class="rule-body">Killing or seriously harming someone without valid roleplay reason or proper build-up.</p>
-      <ul class="rule-list">
-        <li><span class="tag-valid">Valid:</span> You have an ongoing conflict, argument, or situation that escalates naturally.</li>
-        <li><span class="tag-invalid">Not Valid:</span> Shooting someone because you're bored or "felt like it."</li>
-      </ul>
-      <p class="rule-body muted">If it doesn't make sense in a real situation, it's probably RDM.</p>
+      <span class="sub-title">Random Death Match (RDM)</span>
+      <p class="rule-body">Killing or seriously harming someone without valid roleplay reason or escalation.</p>
 
-      <span class="sub-title">Vehicle Deathmatch (VDM)</span>
+      <span class="sub-title">Vehicle Death Match (VDM)</span>
       <p class="rule-body">Using a vehicle as a weapon without proper roleplay reasoning.</p>
-      <ul class="rule-list">
-        <li><span class="tag-valid">Valid:</span> Hitting someone accidentally or during a realistic, high-pressure situation.</li>
-        <li><span class="tag-invalid">Not Valid:</span> Running people over on purpose with no RP behind it.</li>
-      </ul>
-      <p class="rule-body muted">Cars are tools — not weapons (unless the RP actually supports it).</p>
 
       <span class="sub-title">Fail Roleplay (Fail RP)</span>
-      <p class="rule-body">Acting in a way that breaks realism or ignores the situation you're in.</p>
-      <ul class="rule-list">
-        <li><span class="tag-valid">Valid:</span> Reacting appropriately to injuries, threats, or your surroundings.</li>
-        <li><span class="tag-invalid">Not Valid:</span></li>
-        <li class="sub">Acting like you're not injured after being shot</li>
-        <li class="sub">Pulling a gun on 5 people with no backup</li>
-        <li class="sub">Doing unrealistic or "gamey" actions</li>
-      </ul>
-      <p class="rule-body muted">If it wouldn't happen in real life, don't do it here.</p>
+      <p class="rule-body">Performing unrealistic actions, ignoring injuries, or acting in ways that break immersion.</p>
 
       <span class="sub-title">Fear Roleplay (Fear RP)</span>
-      <p class="rule-body">Valuing your character's life and acting like it actually matters.</p>
-      <ul class="rule-list">
-        <li><span class="tag-valid">Valid:</span> Complying when outnumbered or clearly at a disadvantage.</li>
-        <li><span class="tag-invalid">Not Valid:</span> Ignoring guns pointed at you or acting fearless in life-threatening situations.</li>
-      </ul>
+      <p class="rule-body">Value your character's life. If outnumbered, outgunned, or at a major disadvantage, act accordingly.</p>
       <div class="callout info">Your character isn't invincible — play like it.</div>
 
-      <span class="sub-title">Powergaming</span>
-      <p class="rule-body">Forcing actions onto others without giving them a chance to respond or doing things that aren't realistically possible.</p>
-      <ul class="rule-list">
-        <li>"/me knocks you out instantly" (no chance to react)</li>
-        <li>Performing unrealistic superhuman actions</li>
-      </ul>
+      <span class="sub-title">Power Gaming</span>
+      <p class="rule-body">Forcing actions on others or performing unrealistic actions without giving others a chance to respond.</p>
 
       <span class="sub-title">Metagaming</span>
-      <p class="rule-body">Using information your character wouldn't realistically know.</p>
-      <ul class="rule-list">
-        <li>Using Discord/Twitch info in-game</li>
-        <li>Recognizing someone you've never met just by voice/name</li>
-      </ul>
+      <p class="rule-body">Using information your character would not reasonably know through roleplay.</p>
 
       <span class="sub-title">New Life Rule (NLR)</span>
-      <ul class="rule-list">
-        <li>After your character dies, you forget the events leading up to your death.</li>
-        <li>Don't return to the same situation or seek revenge based on that memory.</li>
-        <li>Treat it as a fresh start for that scenario.</li>
-      </ul>
+      <p class="rule-body">After death, your character forgets the events leading to that death and may not return for revenge or continue the same conflict.</p>
     </section>
 
     <hr class="section-divider"/>
 
-    <!-- ═══ IN-GAME LANGUAGE ═══ -->
+    <!-- IN-GAME LANGUAGE -->
     <section class="rule-section" id="language">
-      <div class="section-head">
-        <span class="section-num">Section 03</span>
-        <h2 class="section-title">In-Game Language</h2>
-      </div>
+      <div class="section-head"><span class="section-num">Section 03</span><h2 class="section-title">In-Game Language</h2></div>
 
       <div class="lang-grid">
         <div class="lang-term">Local (NPC)</div><div class="lang-meaning"><span>"Local"</span></div>
@@ -308,10 +313,6 @@ footer { border-top:1px solid rgba(91,184,245,0.07) !important; padding:36px 48p
         <div class="lang-term">Eyes</div><div class="lang-meaning">Camera view — <span>"In my eyes you hit me"</span></div>
         <div class="lang-term">Third eye</div><div class="lang-meaning">Interaction system (targeting menu)</div>
         <div class="lang-term">ICU</div><div class="lang-meaning">Downed but not dead</div>
-      </div>
-
-      <span class="sub-title">Common in Public Servers</span>
-      <div class="lang-grid">
         <div class="lang-term">Cooldown</div><div class="lang-meaning"><span>"I'm on a timer"</span></div>
       </div>
 
@@ -344,383 +345,179 @@ footer { border-top:1px solid rgba(91,184,245,0.07) !important; padding:36px 48p
 
     <hr class="section-divider"/>
 
-    <!-- ═══ LOOTBOXING & NITRP ═══ -->
+    <!-- LOOTBOXING & NITRP -->
     <section class="rule-section" id="lootboxing">
-      <div class="section-head">
-        <span class="section-num">Section 04</span>
-        <h2 class="section-title">Lootboxing &amp; NITRP Rules</h2>
-      </div>
-      <p class="rule-body">All players are expected to maintain realistic roleplay behavior at all times. Exploiting mechanics or refusing to roleplay properly will result in punishment.</p>
-      <p class="rule-body"><strong style="color:#5bb8f5 !important;">Lootboxing</strong> is the act of taking or interacting with items from a player or situation in an unrealistic or exploitative way that breaks immersion.</p>
-      <p class="rule-body"><strong style="color:#5bb8f5 !important;">NITRP</strong> refers to a player who is not properly engaging in roleplay or is actively avoiding it.</p>
+      <div class="section-head"><span class="section-num">Section 04</span><h2 class="section-title">Lootboxing &amp; NITRP</h2></div>
 
-      <span class="sub-title">Examples of Lootboxing</span>
-      <ul class="rule-list">
-        <li>Rapidly searching/downing players with no RP interaction</li>
-        <li>Taking items mid-situation without proper roleplay</li>
-        <li>"Speed looting" without acknowledging the scenario</li>
-        <li>Treating players like storage containers instead of characters</li>
-      </ul>
+      <span class="sub-title">Looting</span>
+      <span class="coming-badge">TBD</span>
 
-      <span class="sub-title">Lootboxing Rule Standard</span>
+      <span class="sub-title">NITRP</span>
       <ul class="rule-list">
-        <li>Looting must be done through proper RP interaction</li>
-        <li>Allow situations to play out realistically</li>
-        <li>Do not rush, spam, or exploit inventory systems during active RP</li>
+        <li>All player interactions must be roleplayed appropriately.</li>
+        <li>Do not exploit game mechanics to gain an advantage.</li>
+        <li>Players are expected to contribute to roleplay and remain engaged in scenarios involving their character.</li>
+        <li>Repeated Lootboxing or NITRP may result in disciplinary action, including removal from the server.</li>
       </ul>
-      <div class="callout">You CANNOT rob downed players. This is a Kill or Rob server.</div>
-
-      <span class="sub-title">Examples of NITRP</span>
-      <ul class="rule-list">
-        <li>Refusing to participate in roleplay situations</li>
-        <li>Ignoring commands or scenarios without valid RP reason</li>
-        <li>Acting completely unrealistic (trolling, random behavior, breaking immersion)</li>
-        <li>Treating the server like a deathmatch or sandbox game instead of RP</li>
-      </ul>
-
-      <span class="sub-title">NITRP Rule Standard</span>
-      <ul class="rule-list">
-        <li>Players are expected to remain in character and engaged</li>
-        <li>Repeated refusal to RP will result in removal from the server</li>
-      </ul>
+      <div class="callout">Wretched City is a Kill or Rob server — you may kill a player OR rob them, but not both in the same interaction.</div>
     </section>
 
     <hr class="section-divider"/>
 
-    <!-- ═══ POLICE INTERACTION ═══ -->
+    <!-- POLICE INTERACTIONS -->
     <section class="rule-section" id="police">
-      <div class="section-head">
-        <span class="section-num">Section 05</span>
-        <h2 class="section-title">Police Interaction Rules</h2>
-      </div>
+      <div class="section-head"><span class="section-num">Section 05</span><h2 class="section-title">Police Interactions</h2></div>
 
-      <span class="sub-title">Respect the Roleplay</span>
-      <p class="rule-body">Police interactions are part of the roleplay experience. Both civilians and law enforcement are expected to act realistically and keep the situation immersive.</p>
-
-      <span class="sub-title">Compliance vs Resistance</span>
+      <span class="sub-title">General Expectations</span>
       <ul class="rule-list">
-        <li>When outnumbered, restrained, or clearly at a disadvantage, you are expected to comply realistically.</li>
-        <li><strong style="color:#eef4fa !important;">Do not</strong> ignore police commands without a valid RP reason.</li>
-        <li>However, resistance is allowed when it makes sense within the situation (escape attempts, negotiations, etc.).</li>
+        <li>Respect law enforcement roleplay.</li>
+        <li>Police are players, not NPCs.</li>
+        <li>Fear RP applies during police encounters.</li>
       </ul>
 
-      <span class="sub-title">Negotiation is Roleplay</span>
-      <ul class="rule-list">
-        <li>You are allowed to talk, negotiate, and create scenarios during police encounters. Not every situation has to end in immediate compliance or arrest.</li>
-        <li>Keep it realistic and within reason. Don't stall endlessly or avoid RP.</li>
-      </ul>
+      <span class="sub-title">Resistance</span>
+      <p class="rule-body">Resistance is allowed when it makes sense, but unrealistic behavior is not.</p>
 
-      <span class="sub-title">No "Gamey" Behavior</span>
-      <ul class="rule-list">
-        <li>Do not treat police like NPCs.</li>
-        <li>Do not run into unrealistic safe zones repeatedly (spamming buildings, exploit looping mechanics, etc.).</li>
-        <li>Play the situation naturally and fairly.</li>
-      </ul>
+      <span class="sub-title">Negotiations</span>
+      <p class="rule-body">Negotiation is encouraged and considered roleplay.</p>
 
-      <span class="sub-title">Value Your Life (During Police Encounters)</span>
-      <ul class="rule-list">
-        <li>If you are clearly outgunned, surrounded, or in custody, act accordingly.</li>
-        <li>Fear RP still applies during police interactions. Don't act invincible or unrealistic.</li>
-      </ul>
-      <div class="callout">DO NOT RAGE BAIT POLICE JUST BECAUSE YOU ARE BORED!</div>
+      <span class="sub-title">In Custody</span>
+      <p class="rule-body">Continue roleplaying appropriately after arrest or detention.</p>
 
-      <span class="sub-title">Police Must Also Roleplay Fairly</span>
+      <span class="sub-title">Police Expectations</span>
       <ul class="rule-list">
-        <li>Law enforcement must follow proper escalation procedures.</li>
-        <li>Verbal commands → Warning → Action</li>
-        <li>Random aggressive force without RP justification is not allowed.</li>
-        <li>Police are expected to create RP, not just end it.</li>
+        <li>Law enforcement must roleplay fairly, use proper escalation, and focus on creating roleplay rather than ending it.</li>
+        <li>Do not intentionally bait law enforcement for entertainment.</li>
       </ul>
-
-      <span class="sub-title">In-Custody Behavior</span>
-      <p class="rule-body">Once detained or arrested, continue roleplay appropriately. Do not disrupt the scene or refuse all interaction without reason.</p>
     </section>
 
     <hr class="section-divider"/>
 
-    <!-- ═══ ROBBERY ═══ -->
-    <section class="rule-section" id="robbery">
-      <div class="section-head">
-        <span class="section-num">Section 06</span>
-        <h2 class="section-title">Robbery Rules</h2>
+    <!-- HEIST ACTIVITIES -->
+    <section class="rule-section" id="heist">
+      <div class="section-head"><span class="section-num">Section 06</span><h2 class="section-title">Heist Activities</h2></div>
+      <p class="rule-body">Heist activity is tied to the restart (TSU) schedule:</p>
+      <ul class="rule-list">
+        <li>Heists may begin no sooner than <strong style="color:#eef4fa !important;">30 minutes after</strong> a TSU (restart).</li>
+        <li>Heists must end no later than <strong style="color:#eef4fa !important;">30 minutes before</strong> the next TSU (restart).</li>
+      </ul>
+
+      <span class="sub-title">Group &amp; Hostage Limits</span>
+      <div class="heist-grid">
+        <div class="hh">Job</div><div class="hh">Per Group</div><div class="hh">Hostages</div>
+        <div class="hj">24/7</div><div class="hn">1–2</div><div class="hn">1</div>
+        <div class="hj">Bank Truck</div><div class="hn">2–3</div><div class="hn">0</div>
+        <div class="hj">Fleeca</div><div class="hn">2–3</div><div class="hn">1–2</div>
+        <div class="hj">Jewelry</div><div class="hn">2 per location</div><div class="hn">1</div>
+        <div class="hj">Art Gallery</div><div class="hn">1–2</div><div class="hn">1</div>
+        <div class="hj">Pawn Shop</div><div class="hn">2–3</div><div class="hn">1–2</div>
       </div>
-      <p class="rule-body">Robberies are allowed but must always be done with proper roleplay, clear intent, and realistic execution. Random or "for fun" robberies are <strong style="color:#f87171 !important;">NOT</strong> permitted.</p>
-
-      <span class="sub-title">Value of Life Applies</span>
-      <ul class="rule-list">
-        <li>During any robbery situation, all players must value their lives realistically.</li>
-        <li>If you are clearly outnumbered, outgunned, or at a disadvantage, you are expected to comply.</li>
-        <li>Do not act fearless or ignore life-threatening situations.</li>
-      </ul>
-
-      <span class="sub-title">Initiating a Robbery</span>
-      <ul class="rule-list">
-        <li>You must give a clear interaction and the weapon must be visible before or during a robbery (verbal threats, demands, negotiation).</li>
-        <li>Allow reasonable time for the situation to develop.</li>
-        <li>Do not instantly shoot or force outcomes without RP interaction.</li>
-      </ul>
-
-      <span class="sub-title">Fair Opportunity for RP</span>
-      <ul class="rule-list">
-        <li>Both sides should have a chance to respond.</li>
-        <li>Do not spam actions or rush outcomes in a way that prevents reaction.</li>
-        <li>Allow space for negotiation, compliance, or escalation.</li>
-      </ul>
-
-      <span class="sub-title">No Random or Repeated Robberies</span>
-      <ul class="rule-list">
-        <li>Do not rob players repeatedly for no reason.</li>
-        <li>Do not target the same individuals or groups out of frustration or trolling.</li>
-        <li>Robberies should have a story or motive behind them.</li>
-      </ul>
-
-      <span class="sub-title">Police Presence Awareness</span>
-      <ul class="rule-list">
-        <li>If police are nearby or likely to respond, you must acknowledge the risk and adjust your RP accordingly.</li>
-        <li>You can still proceed with robberies if realistic, but expect consequences.</li>
-        <li>Police are allowed to push if players do not have a hostage visible.</li>
-        <li>Do not ignore active law enforcement presence.</li>
-      </ul>
-
-      <span class="sub-title">Safe Zones &amp; Unrealistic Areas</span>
-      <p class="rule-body">Robberies should not be initiated in unrealistic or heavily restricted areas unless server systems explicitly allow it.</p>
-
-      <span class="sub-title">Post-Robbery Conduct</span>
-      <p class="rule-body">Once a robbery ends, do not immediately return to the same scene to continue conflict unless RP naturally leads back to it. Respect the outcome of the situation.</p>
     </section>
 
     <hr class="section-divider"/>
 
-    <!-- ═══ KIDNAPPING ═══ -->
-    <section class="rule-section" id="kidnapping">
-      <div class="section-head">
-        <span class="section-num">Section 07</span>
-        <h2 class="section-title">Kidnapping &amp; Hostage RP Rules</h2>
-      </div>
-      <p class="rule-body">Kidnapping or taking hostages must have a valid in-character reason (conflict, leverage, gang activity, negotiation, etc.). Random kidnapping with no RP purpose is not allowed.</p>
+    <!-- ROBBERIES, KIDNAPPINGS & HOSTAGES -->
+    <section class="rule-section" id="robberies">
+      <div class="section-head"><span class="section-num">Section 07</span><h2 class="section-title">Robberies, Kidnappings &amp; Hostages</h2></div>
 
-      <span class="sub-title">Value of Life (Hostages &amp; Victims)</span>
+      <span class="sub-title">General Rules</span>
       <ul class="rule-list">
-        <li>Hostages must value their lives realistically during the situation.</li>
-        <li>Kidnappers must also act realistically and understand risks (police response, retaliation, etc.).</li>
-        <li>Do not act fearless or ignore life-threatening situations from either side.</li>
+        <li>All robberies and kidnappings must have a valid roleplay reason.</li>
+        <li>Give all parties a chance to respond.</li>
+        <li>Value your life and act realistically.</li>
       </ul>
 
-      <span class="sub-title">Roleplay Over Instant Action</span>
+      <span class="sub-title">Kill or Rob Rule</span>
+      <p class="rule-body">You may kill a victim or rob a victim. You may not do both.</p>
+
+      <span class="sub-title">Hostages</span>
       <ul class="rule-list">
-        <li>Situations should be roleplayed out with communication, negotiation, and escalation.</li>
-        <li>Do not immediately kill, injure, or "end" a hostage situation without RP interaction.</li>
+        <li>Must have a legitimate RP purpose.</li>
+        <li>May not be held for more than 30 minutes.</li>
+        <li>Must be treated realistically.</li>
+        <li>Harm to hostages must be roleplay-driven.</li>
       </ul>
 
-      <span class="sub-title">Negotiation is Required</span>
-      <ul class="rule-list">
-        <li>Law enforcement and kidnappers are expected to allow negotiation to take place.</li>
-        <li>Talk, demands, and exchanges are encouraged.</li>
-        <li>Do not rush to force outcomes without giving the situation time to develop.</li>
-      </ul>
-
-      <span class="sub-title">Hostage Limits &amp; Fair Play</span>
-      <div class="hostage-grid">
-        <div class="hg-header">Location</div><div class="hg-header">Hostages</div>
-        <div class="hg-loc">24/7 Stores</div><div class="hg-num">1–2</div>
-        <div class="hg-loc">Fleeca Bank</div><div class="hg-num">2–3</div>
-        <div class="hg-loc">Big Bank</div><div class="hg-num">3–4</div>
-        <div class="hg-loc">Jewelry Store</div><div class="hg-num">1–2</div>
-      </div>
-      <p class="rule-body">Do not take excessive hostages just to gain unfair advantages or force outcomes.</p>
-
-      <span class="sub-title">No Abuse of Hostages</span>
-      <ul class="rule-list">
-        <li>You cannot hold a hostage for more than 45 minutes. You must automatically let them go if the mission has failed.</li>
-        <li>Do not randomly harm or kill hostages without RP justification or escalation.</li>
-        <li>Any harm must be part of the evolving RP scenario, not used as trolling or pressure tactics.</li>
-      </ul>
-
-      <span class="sub-title">Police Response Awareness</span>
-      <ul class="rule-list">
-        <li>Kidnapping situations will trigger police attention and escalation.</li>
-        <li>Be prepared for realistic response times and outcomes.</li>
-        <li>Do not ignore the presence or likelihood of law enforcement involvement.</li>
-        <li>If you do not have a hostage, police are able to initiate.</li>
-      </ul>
-
-      <span class="sub-title">Post-Situation Conduct</span>
-      <p class="rule-body">Once a hostage situation ends, all parties must respect the outcome and not immediately re-engage without proper RP reason.</p>
+      <span class="sub-title">Police Response</span>
+      <p class="rule-body">Police may intervene realistically and are not required to ignore criminal activity.</p>
     </section>
 
     <hr class="section-divider"/>
 
-    <!-- ═══ SAFE ZONES ═══ -->
+    <!-- SAFE ZONES & HOSPITALS -->
     <section class="rule-section" id="safezones">
-      <div class="section-head">
-        <span class="section-num">Section 08</span>
-        <h2 class="section-title">Safe Zones &amp; Hospital Rules</h2>
-      </div>
-      <p class="rule-body">Certain areas are considered protected spaces to ensure fair roleplay, recovery, and realistic downtime. These areas are not to be abused for avoidance, combat evasion, or trolling.</p>
+      <div class="section-head"><span class="section-num">Section 08</span><h2 class="section-title">Safe Zones &amp; Hospitals</h2></div>
 
       <span class="sub-title">Safe Zones</span>
-      <p class="rule-body">Safe zones are locations where hostile actions, robberies, or active criminal engagements are not allowed unless explicitly permitted by staff or server systems.</p>
-      <p class="rule-body"><strong style="color:#eef4fa !important;">Common Safe Zones Include (unless stated otherwise):</strong></p>
+      <p class="rule-body"><strong style="color:#eef4fa !important;">Common Safe Zones include:</strong></p>
       <ul class="check-list">
-        <li>All Hospitals</li>
-        <li>Police Department / Government buildings</li>
-        <li>Staff run events or protected RP scenes</li>
-        <li>Clothing / Barber Shop</li>
-        <li>Inside player owned business</li>
-        <li>Player spawn areas</li>
+        <li>Hospitals</li>
+        <li>Police Departments</li>
+        <li>Government Buildings</li>
+        <li>Staff Events</li>
+        <li>Clothing Stores</li>
+        <li>Barber Shops</li>
+        <li>Player-Owned Businesses</li>
+        <li>Spawn Areas</li>
       </ul>
 
-      <span class="sub-title">Safe Zone Rules</span>
+      <span class="sub-title">Rules</span>
       <ul class="rule-list">
-        <li>No killing, robbing, or initiating hostile RP in safe zones</li>
-        <li>No using safe zones to escape active RP (running in to avoid consequences)</li>
-        <li>You may enter safe zones to recover, interact, or reset RP situations appropriately</li>
-        <li>If a situation starts outside a safe zone, it must not be abused by repeatedly fleeing into one to avoid RP.</li>
+        <li>No hostile RP, robberies, or violence.</li>
+        <li>Do not use safe zones to escape active situations.</li>
+        <li>Do not abuse safe zones as a reset button.</li>
       </ul>
 
-      <span class="sub-title">Safe Zone Abuse</span>
+      <span class="sub-title">Hospitals</span>
       <ul class="rule-list">
-        <li>Repeatedly entering/exiting safe zones to bait or escape RP is not allowed</li>
-        <li>Using safe zones as a "reset button" for ongoing situations will be punished</li>
-        <li>Players are expected to respect the purpose of these areas.</li>
+        <li>Roleplay injuries realistically.</li>
+        <li>Respect EMS and medical roleplay.</li>
+        <li>Do not return immediately to active conflicts after treatment.</li>
       </ul>
-
-      <span class="sub-title">Hospital Rules</span>
-
-      <p class="rule-body"><strong style="color:#eef4fa !important;">While Injured / Downed:</strong></p>
-      <ul class="rule-list">
-        <li>You must roleplay injuries realistically (pain, limited movement, etc.)</li>
-        <li>Do not talk, act, or fight if your condition does not allow it (depending on server mechanics)</li>
-        <li>Always follow your injury state properly.</li>
-      </ul>
-
-      <p class="rule-body"><strong style="color:#eef4fa !important;">Medical RP Respect:</strong></p>
-      <ul class="rule-list">
-        <li>Allow EMS/medical staff to perform their roleplay properly</li>
-        <li>Do not interrupt or disrupt medical RP without valid reason</li>
-        <li>Medical situations should be treated as active RP scenes.</li>
-      </ul>
-
-      <p class="rule-body"><strong style="color:#eef4fa !important;">Hospital Abuse:</strong></p>
-      <ul class="rule-list">
-        <li>Do not use the hospital as a safe escape from active combat or police pursuit</li>
-        <li>Do not return immediately to ongoing conflict after respawn unless RP allows it</li>
-        <li>Once treated/revived, you should act according to your injury and situation.</li>
-      </ul>
-
-      <p class="rule-body"><strong style="color:#eef4fa !important;">Return to RP (Post-Treatment):</strong></p>
-      <p class="rule-body">After being treated or revived, you must not instantly re-engage in the same active scenario unless logically and realistically allowed within RP context.</p>
-      <div class="callout">HOSPITAL ISN'T A HANG OUT SPOT.</div>
+      <div class="callout">Hospitals are not hangout spots.</div>
     </section>
 
     <hr class="section-divider"/>
 
-    <!-- ═══ PUNISHMENT SYSTEM ═══ -->
+    <!-- PUNISHMENT SYSTEM -->
     <section class="rule-section" id="punishment">
-      <div class="section-head">
-        <span class="section-num">Section 09</span>
-        <h2 class="section-title">Punishment System</h2>
-      </div>
-      <p class="rule-body">Wretched City RP uses a structured punishment system to ensure fairness, consistency, and accountability. Staff decisions are based on severity, intent, and repeat offenses. All warnings, strikes and bans are recorded.</p>
+      <div class="section-head"><span class="section-num">Section 09</span><h2 class="section-title">Punishment System</h2></div>
 
       <span class="sub-title">Warnings</span>
-      <p class="rule-body"><strong style="color:#eef4fa !important;">When Warnings Are Issued:</strong></p>
-      <ul class="rule-list">
-        <li>Minor rule breaks</li>
-        <li>First-time offenses</li>
-        <li>Unintentional mistakes (depending on severity)</li>
-      </ul>
-      <p class="rule-body"><strong style="color:#eef4fa !important;">Important Notes:</strong></p>
-      <ul class="check-list">
-        <li>Warnings are tracked and stored</li>
-        <li class="no">Multiple warnings can lead to harsher punishment</li>
-        <li>Repeated behavior will not be treated as "new mistakes"</li>
-      </ul>
+      <p class="rule-body">Issued for minor or first-time offenses.</p>
 
       <span class="sub-title">Strikes</span>
-      <p class="rule-body">A strike is a serious punishment given for major or repeated rule violations.</p>
-      <p class="rule-body"><strong style="color:#eef4fa !important;">When Strikes Are Issued:</strong></p>
       <ul class="rule-list">
-        <li>Repeated rule breaking after warnings</li>
-        <li>Serious Fail RP, RDM, VDM, or abuse</li>
-        <li>Disruptive or harmful behavior to the server experience</li>
+        <li>Issued for serious or repeated violations.</li>
+        <li>Strikes may be reviewed and reduced after 30 days of clean behavior.</li>
       </ul>
-      <p class="rule-body">Strikes can be removed over time. Every 30 days strikes will be reviewed and reduced if players have not committed any violations during those 30 days.</p>
-      <p class="rule-body"><strong style="color:#eef4fa !important;">Strike System:</strong></p>
-      <span class="coming-badge">Coming Soon</span>
 
-      <span class="sub-title">Bans</span>
-      <p class="rule-body">A ban is removal from Wretched City RP for a set period or permanently depending on severity.</p>
-      <p class="rule-body"><strong style="color:#eef4fa !important;">Ban Types:</strong></p>
-      <ul class="rule-list">
-        <li><strong style="color:#5bb8f5 !important;">Temporary Ban:</strong> Applied for serious but non-permanent offenses</li>
-        <li><strong style="color:#f87171 !important;">Permanent Ban:</strong> Applied for extreme or repeated violations</li>
-      </ul>
-      <p class="rule-body"><strong style="color:#eef4fa !important;">Reasons for Ban:</strong></p>
-      <ul class="rule-list">
-        <li>Severe or repeated rule violations</li>
-        <li>Exceeding Strike points</li>
-        <li>Toxic behavior or harassment</li>
-        <li>Exploiting, cheating, or intentional disruption of RP</li>
-        <li>Continued disregard for staff decisions or warnings</li>
-      </ul>
-    </section>
-
-    <hr class="section-divider"/>
-
-    <!-- ═══ ZERO TOLERANCE ═══ -->
-    <section class="rule-section" id="zerotolerance">
-      <div class="section-head">
-        <span class="section-num">Section 10</span>
-        <h2 class="section-title">Zero Tolerance Violations</h2>
+      <span class="sub-title">Discipline Scale</span>
+      <div class="lang-grid">
+        <div class="lang-term">1st Offense</div><div class="lang-meaning">Warning</div>
+        <div class="lang-term">2nd Offense</div><div class="lang-meaning">3-Day to 2-Week Ban</div>
+        <div class="lang-term">3rd Offense</div><div class="lang-meaning">2-Week to 1-Month Ban</div>
+        <div class="lang-term">Final Offense</div><div class="lang-meaning">Permanent Ban</div>
       </div>
-      <p class="rule-body">The following may result in an <strong style="color:#f87171 !important;">instant ban</strong> without warning:</p>
+
+      <span class="sub-title">Zero-Tolerance Violations</span>
+      <p class="rule-body">May result in immediate removal:</p>
       <ul class="rule-list">
         <li>Cheating or exploiting</li>
         <li>Severe harassment or hate speech</li>
-        <li>Intentional disruption of the server</li>
+        <li>Intentional server disruption</li>
+        <li>Sexual harassment</li>
+        <li>Excessive bullying</li>
         <li>Refusal to follow staff direction</li>
-        <li>Sexual harassment of female or male or any underage remarks</li>
-        <li>Excessive bullying (beyond RP)</li>
-        <li>Disrespecting pronouns (if mentioned and ignored)</li>
       </ul>
-    </section>
 
-    <hr class="section-divider"/>
+      <span class="sub-title">Ban Appeals</span>
+      <p class="rule-body">Players may submit a request for a ban appeal through Discord if they believe a punishment was issued unfairly.</p>
 
-    <!-- ═══ HIGH COMMAND ═══ -->
-    <section class="rule-section" id="highcommand">
-      <div class="section-head">
-        <span class="section-num">Section 11</span>
-        <h2 class="section-title">High Command Discretion</h2>
-      </div>
-      <p class="rule-body">Not every situation fits perfectly into a category. High Command <strong style="color:#5bb8f5 !important;">(ONLY)</strong> reserves the right to adjust punishments based on context, intent, and impact on the server.</p>
-    </section>
+      <span class="sub-title">High Command Discretion</span>
+      <p class="rule-body">High Command reserves the right to adjust punishments based on context, intent, and impact on the community.</p>
 
-    <hr class="section-divider"/>
-
-    <!-- ═══ BAN APPEALS ═══ -->
-    <section class="rule-section" id="appeals">
-      <div class="section-head">
-        <span class="section-num">Section 12</span>
-        <h2 class="section-title">Ban Appeals</h2>
-      </div>
-      <ul class="rule-list">
-        <li>If you believe a punishment was unfair, you may submit a staff appeal through our discord channel and request a ban appeal form.</li>
-        <li>Be respectful and provide clear evidence or explanation</li>
-        <li>Do not spam or argue with staff in-game or in public channels</li>
-      </ul>
-    </section>
-
-    <hr class="section-divider"/>
-
-    <!-- ═══ CRIMINAL ACTIVITY ═══ -->
-    <section class="rule-section" id="criminal">
-      <div class="section-head">
-        <span class="section-num">Section 13</span>
-        <h2 class="section-title">Criminal Activity</h2>
-      </div>
-      <span class="coming-badge">Coming Soon</span>
+      <p class="rule-body muted" style="margin-top:28px !important;">Rules can be modified at any time, and it is your responsibility to stay up to date.</p>
     </section>
 
   </main>
@@ -734,7 +531,6 @@ footer { border-top:1px solid rgba(91,184,245,0.07) !important; padding:36px 48p
 <a href="#" class="back-top" id="backTop" aria-label="Back to top">&uarr;</a>
 
 <script>
-// Sidebar active state on scroll
 const sections = document.querySelectorAll('.rule-section');
 const sidebarLinks = document.querySelectorAll('#sidebarLinks a');
 
@@ -742,7 +538,7 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       sidebarLinks.forEach(l => l.classList.remove('active'));
-      const active = document.querySelector(`#sidebarLinks a[href="#${entry.target.id}"]`);
+      const active = document.querySelector('#sidebarLinks a[href="#' + entry.target.id + '"]');
       if (active) active.classList.add('active');
     }
   });
@@ -750,7 +546,6 @@ const observer = new IntersectionObserver((entries) => {
 
 sections.forEach(s => observer.observe(s));
 
-// Back to top button
 const backTop = document.getElementById('backTop');
 window.addEventListener('scroll', () => {
   backTop.classList.toggle('show', window.scrollY > 600);
