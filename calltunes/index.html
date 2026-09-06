@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#060914">
+<title>CALLTUNES — Listen Together on Discord</title>
+<meta name="description" content="CALLTUNES is a shared listening and watch experience built for Discord calls and voice channels.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CALLTUNES — Listen Together on Discord">
+<meta property="og:description" content="One queue. One room. Everyone on the same beat.">
+<meta property="og:image" content="https://wretchedcity.com/calltunes/assets/calltunes-icon.png">
+<link rel="icon" href="assets/calltunes-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div class="noise" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="site-head">
+<a class="wordmark" href="#top" aria-label="CALLTUNES home"><img src="assets/calltunes-icon.png" alt=""><span>CALLTUNES</span></a>
+<nav><a href="#experience">Experience</a><a href="#features">Features</a><a href="#how">How it works</a></nav>
+<a class="head-cta" href="https://discord.com/oauth2/authorize?client_id=1544468241643081819" target="_blank" rel="noreferrer">Add to Discord <span>↗</span></a>
+</header>
+<main id="top"><section class="hero" aria-labelledby="hero-title">
+<div class="hero-copy reveal">
+<div class="eyebrow"><span class="live-dot"></span> MADE FOR DISCORD</div>
+<h1 id="hero-title">THE CALL<br><em>HAS A SOUND.</em></h1>
+<p>One shared queue for the people already in your call. Music, video, playlists and synchronized playback without leaving Discord.</p>
+<div class="hero-actions">
+<a class="btn-primary" href="https://discord.com/oauth2/authorize?client_id=1544468241643081819" target="_blank" rel="noreferrer">Add CALLTUNES <span>↗</span></a>
+<a class="btn-quiet" href="#experience"><span class="play-ring">▶</span> See it in motion</a>
+</div>
+<div class="hero-proof"><span>DISCORD CALLS</span><b></b><span>VOICE CHANNELS</span><b></b><span>SHARED QUEUES</span><b></b><span>WATCH TOGETHER</span></div>
+</div>
+<div class="hero-stage" aria-hidden="true">
+<div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+<div class="pulse-disc"><img src="assets/calltunes-icon.png" alt=""></div>
+<div class="equalizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="float-note note-a">SYNCED <strong>00:42</strong></div>
+<div class="float-note note-b">3 LISTENERS <span class="avatars"><i></i><i></i><i></i></span></div>
+<div class="float-note note-c">UP NEXT <strong>04</strong></div>
+</div>
+<div class="scroll-cue"><span>SCROLL TO TUNE IN</span><i></i></div>
+</section>
+<section class="marquee" aria-hidden="true"><div><span>LISTEN TOGETHER</span><i>◆</i><span>WATCH TOGETHER</span><i>◆</i><span>BUILD THE QUEUE</span><i>◆</i><span>STAY IN THE CALL</span><i>◆</i><span>LISTEN TOGETHER</span><i>◆</i><span>WATCH TOGETHER</span></div></section>
+<section class="experience" id="experience">
+<div class="section-intro reveal"><span class="section-no">01 / EXPERIENCE</span><h2>It feels like part of the call.<br><em>Because it is.</em></h2></div><div class="product-theatre reveal">
+<div class="theatre-glow"></div>
+<div class="browser-shell" data-demo>
+<div class="browser-top"><div class="traffic"><i></i><i></i><i></i></div><span>CALLTUNES / Discord Activity</span><div class="demo-tabs"><button class="active" data-shot="now-playing.png">Now Playing</button><button data-shot="playlists.png">Playlists</button><button data-shot="settings.png">Settings</button></div></div>
+<div class="shot-wrap"><img class="demo-shot" src="assets/now-playing.png" alt="CALLTUNES Now Playing interface"></div>
+</div>
+<div class="device-shell"><img src="assets/mobile.png" alt="CALLTUNES mobile interface"></div>
+</div>
+</section>
+<section class="feature-run" id="features">
+<div class="feature-line reveal"><span class="section-no">02 / WHAT IT DOES</span><p>Less typing commands.<br>More actually listening.</p></div>
+<div class="feature-split reveal"><div><span class="mono">01</span><h3>One room.<br>One timeline.</h3></div><p>Playback, seeking, queue changes and track changes stay tied to the shared session instead of everyone running their own player.</p></div>
+<div class="feature-split reverse reveal"><div><span class="mono">02</span><h3>Build it<br>together.</h3></div><p>Drop links into the shared queue, reorder what is next, save playlists and keep favorites ready for the next call.</p></div>
+<div class="feature-split reveal"><div><span class="mono">03</span><h3>Watch without<br>leaving.</h3></div><p>Switch into Watch when the room moves from audio to video and keep the same session, queue and people with you.</p></div>
+</section>
+<section class="signal-section" aria-hidden="true"><div class="signal-copy">YOUR CALL <span>IS NOW</span> THE PLAYER.</div><canvas id="wave"></canvas></section><section class="how" id="how">
+<div class="section-intro reveal"><span class="section-no">03 / START A SESSION</span><h2>Three moves.<br><em>Everybody is in.</em></h2></div>
+<div class="steps">
+<article class="step reveal"><span>01</span><h3>Launch</h3><p>Open CALLTUNES from Discord while you are already in a call or voice channel.</p></article>
+<article class="step reveal"><span>02</span><h3>Drop a link</h3><p>Add a supported music or video link. The room gets the same shared session.</p></article>
+<article class="step reveal"><span>03</span><h3>Press play</h3><p>Queue together, listen together, switch to Watch when the room wants video.</p></article>
+</div>
+</section>
+<section class="finale">
+<div class="finale-orb" aria-hidden="true"><img src="assets/calltunes-icon.png" alt=""></div>
+<div class="finale-copy reveal"><span class="section-no">READY WHEN THE CALL IS</span><h2>STOP SENDING<br>“PRESS PLAY NOW.”</h2><p>Put everyone on the same beat instead.</p><a class="btn-primary giant" href="https://discord.com/oauth2/authorize?client_id=1544468241643081819" target="_blank" rel="noreferrer">ADD CALLTUNES TO DISCORD <span>↗</span></a></div>
+</section>
+</main>
+<footer><div class="footer-brand"><img src="assets/calltunes-icon.png" alt=""><strong>CALLTUNES</strong></div><div class="footer-links"><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy</a></div><p>© 2026 CALLTUNES. Independent Discord application.</p></footer>
+<script src="app.js"></script>
+</body>
+</html>
