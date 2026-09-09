@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wretchedcity.com/sitemap.xml

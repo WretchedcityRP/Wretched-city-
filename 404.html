@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <meta name="theme-color" content="#080a0f"/>
+<meta name="robots" content="noindex, nofollow"/>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <link rel="apple-touch-icon" href="favicon.png"/>
 <title>404 — Wretched City RP</title>
@@ -11,47 +12,47 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-*, *::before, *::after { margin:0 !important; padding:0; box-sizing:border-box !important; -webkit-tap-highlight-color:transparent !important; -webkit-text-size-adjust:none !important; }
-:root { color-scheme:light !important; forced-color-adjust:none !important; }
-html { background:#080a0f !important; -webkit-font-smoothing:antialiased; overflow-x:hidden !important; }
-body { background:#080a0f !important; background-color:#080a0f !important; color:#c8d4e0 !important; font-family:'Barlow',Arial,sans-serif !important; overflow-x:hidden; min-height:100vh; min-height:100dvh; display:flex !important; align-items:center !important; justify-content:center !important; }
-h1,h2,h3,h4,h5,h6 { color:#eef4fa !important; font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important; }
-a { color:inherit !important; text-decoration:none !important; }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; -webkit-text-size-adjust:none; }
+:root { color-scheme:light; forced-color-adjust:none; }
+html { background:#080a0f; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+body { background:#080a0f; background-color:#080a0f; color:#c8d4e0; font-family:'Barlow',Arial,sans-serif; overflow-x:hidden; min-height:100vh; min-height:100dvh; display:flex; align-items:center; justify-content:center; }
+h1,h2,h3,h4,h5,h6 { color:#eef4fa; font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif; }
+a { color:inherit; text-decoration:none; }
 
-/* BG */
-.page-bg { position:fixed !important; inset:0 !important; z-index:0 !important; background: radial-gradient(ellipse 80% 50% at 50% 30%, rgba(91,184,245,0.10) 0%, transparent 60%), linear-gradient(170deg, #090b10 0%, #0d1322 45%, #050810 100%) !important; }
-.page-bg::after { content:'' !important; position:absolute !important; inset:0 !important; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); opacity:0.5 !important; pointer-events:none !important; }
 
-.wrap { position:relative !important; z-index:2 !important; text-align:center !important; padding:40px 24px !important; max-width:520px !important; }
-.logo { width:120px !important; height:auto !important; margin:0 auto 20px !important; display:block !important; filter:drop-shadow(0 0 16px rgba(91,184,245,0.45)) !important; }
-.code { font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important; font-size:clamp(5rem,22vw,9rem) !important; letter-spacing:6px !important; color:#eef4fa !important; line-height:0.9 !important; text-shadow:0 0 30px rgba(91,184,245,0.6), 0 0 90px rgba(91,184,245,0.3) !important; }
-.headline { font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif !important; font-size:1.7rem !important; letter-spacing:3px !important; color:#eef4fa !important; margin-top:6px !important; }
-.sub { font-size:0.92rem !important; color:#5a6a7a !important; line-height:1.7 !important; margin:14px auto 30px !important; max-width:380px !important; }
-.btns { display:flex !important; gap:14px !important; justify-content:center !important; flex-wrap:wrap !important; }
-.btn-blue { font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.85rem !important; letter-spacing:3px !important; text-transform:uppercase !important; font-weight:700 !important; color:#080a0f !important; background:#5bb8f5 !important; padding:13px 32px !important; display:inline-block !important; clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%); transition:background 0.2s,transform 0.2s; }
-.btn-blue:hover { background:#eef4fa !important; transform:translateY(-2px); }
-.btn-ghost { font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif !important; font-size:0.85rem !important; letter-spacing:3px !important; text-transform:uppercase !important; color:#c8d4e0 !important; background:transparent !important; border:1px solid #5a6a7a !important; padding:13px 32px !important; display:inline-block !important; clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%); transition:all 0.2s; }
-.btn-ghost:hover { border-color:#5bb8f5 !important; color:#5bb8f5 !important; }
+.page-bg { position:fixed; inset:0; z-index:0; background:linear-gradient(180deg,rgba(8,10,15,0.52),rgba(8,10,15,0.82)),url('assets/wretched-city-background.png') center center / cover no-repeat; }
+.page-bg::after { content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); opacity:0.5; pointer-events:none; }
+
+.wrap { position:relative; z-index:2; text-align:center; padding:40px 24px; max-width:520px; }
+.logo { width:120px; height:auto; margin:0 auto 20px; display:block; filter:drop-shadow(0 0 16px rgba(91,184,245,0.45)); }
+.code { font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif; font-size:clamp(5rem,22vw,9rem); letter-spacing:6px; color:#eef4fa; line-height:0.9; text-shadow:0 0 30px rgba(91,184,245,0.6), 0 0 90px rgba(91,184,245,0.3); }
+.headline { font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif; font-size:1.7rem; letter-spacing:3px; color:#eef4fa; margin-top:6px; }
+.sub { font-size:0.92rem; color:#5a6a7a; line-height:1.7; margin:14px auto 30px; max-width:380px; }
+.btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.btn-blue { font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif; font-size:0.85rem; letter-spacing:3px; text-transform:uppercase; font-weight:700; color:#080a0f; background:#5bb8f5; padding:13px 32px; display:inline-block; clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%); transition:background 0.2s,transform 0.2s; }
+.btn-blue:hover { background:#eef4fa; transform:translateY(-2px); }
+.btn-ghost { font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif; font-size:0.85rem; letter-spacing:3px; text-transform:uppercase; color:#c8d4e0; background:transparent; border:1px solid #5a6a7a; padding:13px 32px; display:inline-block; clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%); transition:all 0.2s; }
+.btn-ghost:hover { border-color:#5bb8f5; color:#5bb8f5; }
 
 @media (prefers-color-scheme: dark) {
-  html,body { background:#080a0f !important; color:#c8d4e0 !important; }
-  .code,.headline { color:#eef4fa !important; }
-  .sub { color:#5a6a7a !important; }
-  .btn-blue { background:#5bb8f5 !important; color:#080a0f !important; }
-  .btn-ghost { color:#c8d4e0 !important; border-color:#5a6a7a !important; }
+  html,body { background:#080a0f; color:#c8d4e0; }
+  .code,.headline { color:#eef4fa; }
+  .sub { color:#5a6a7a; }
+  .btn-blue { background:#5bb8f5; color:#080a0f; }
+  .btn-ghost { color:#c8d4e0; border-color:#5a6a7a; }
 }
 </style>
 </head>
 <body>
 <div class="page-bg"></div>
 <div class="wrap">
-  <img class="logo" src="wc-logo.gif" alt="Wretched City RP"/>
+  <img class="logo" src="assets/wc-logo-metallic.png" alt="Wretched City RP" width="1254" height="1254"/>
   <div class="code">404</div>
   <div class="headline">Lost in the City</div>
   <p class="sub">This street doesn't exist — the page you're looking for took a wrong turn somewhere in Wretched City.</p>
   <div class="btns">
     <a href="index.html" class="btn-blue">Back to Safety</a>
-    <a href="https://discord.gg/dzJ7qX8ZR" target="_blank" class="btn-ghost">Discord</a>
+    <a href="https://discord.gg/RBVgmQNKCt" target="_blank" class="btn-ghost" rel="noopener noreferrer">Discord</a>
   </div>
 </div>
 </body>
